@@ -21,18 +21,18 @@ const userSchema = new Schema(
             required: true,
             minlength: 6
         },
-        //link "fishtales" chat feature to user
-        fishtales: [
+        //link "fishtopics" chat feature to user
+        fishtopics: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'FishTale'
+                ref: 'FishTopic'
             }
         ],
-        //link "vampchat" chat feature to user
-        vampchats: [
+        //link "vamptopic" chat feature to user
+        vamptopics: [
             {
                 type: Schema.Types.ObjectId,
-                ref: 'VampChat'
+                ref: 'VampTopic'
             }
         ]
     },

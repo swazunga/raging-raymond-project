@@ -1,14 +1,14 @@
 const { Schema, model } = require('mongoose');
-const fishTaleReactionSchema = require('./FishTaleReaction')
+const vampTopicReactionSchema = require('./VampTopicReaction');
 const dateFormat = require('../utils/dateFormat');
 
-const fishTaleSchema = new Schema(
+const vampTopicSchema = new Schema(
     {
-        fishTaleText: {
+        vampTopicText: {
             type: String,
-            required: 'You need to add a fish tale!',
+            required: 'You need to add a VAMP chat!',
             minlength: 1,
-            maxlength: 280
+            naxlength: 280
         },
         createdAt: {
             type: Date,
@@ -19,7 +19,7 @@ const fishTaleSchema = new Schema(
             type: String,
             required: true
         },
-        fishTaleReactions: [fishTaleReactionSchema],
+        vampTopicReactions: [vampTopicReactionSchema],
     },
     {
         toJSON: {
@@ -28,10 +28,10 @@ const fishTaleSchema = new Schema(
     }
 );
 
-fishTaleSchema.virtual('fishTaleReactionCount').get(function () {
-    return this.fishTaleReactions.length;
+vampTopicSchema.virtual('vampTopicReactionCount').get(function () {
+    return this.vampTopicReactions.length;
 });
 
-const FishTale = model('FishTale', fishTaleSchema);
+const VampTopic = model('VampTopic', vampTopicSchema);
 
-module.exports = FishTale;
+module.exports = VampTopic;

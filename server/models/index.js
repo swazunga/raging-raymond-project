@@ -1,5 +1,5 @@
 const User = require('./User');
-const FishTale = require('./FishTale');
-const VampChat = require('./VampChat');
+const FishTopic = require('./FishTopic');
+const VampTopic = require('./VampTopic');
 
-module.exports = { User, FishTale, VampChat }
+module.exports = { User, FishTopic, VampTopic }

@@ -1,11 +1,11 @@
 const faker = require('faker');
 
 const db = require('../config/connection');
-const { FishTale, VampChat, User } = require('../models');
+const { FishTopic, VampTopic, User } = require('../models');
 
 db.once('open', async () => {
-    await FishTale.deleteMany({});
-    await VampChat.deleteMany({});
+    await FishTopic.deleteMany({});
+    await VampTopic.deleteMany({});
     await User.deleteMany({});
 
     // create user data
@@ -23,72 +23,72 @@ db.once('open', async () => {
 
 
 
-    // create FishTales
-    let createdFishTales = [];
+    // create FishTopics
+    let createdFishTopics = [];
     for (let i = 0; i < 100; i += 1) {
-        const fishTaleText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+        const fishTopicText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
         const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
         const { username, _id: userId } = createdUsers.ops[randomUserIndex];
 
-        const createdFishTale = await FishTale.create({ fishTaleText, username });
+        const createdFishTopic = await FishTopic.create({ fishTopicText, username });
 
         const updatedUser = await User.updateOne(
             { _id: userId },
-            { $push: { fishTales: createdFishTales._id } }
+            { $push: { fishTopics: createdFishTopics._id } }
         );
 
-        createdFishTales.push(createdFishTale);
+        createdFishTopics.push(createdFishTopic);
     }
 
-    // create FishTaleReactions
+    // create FishTopicReactions
     for (let i = 0; i < 100; i += 1) {
-        const fishTaleReactionBody = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+        const fishTopicReactionBody = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
         const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
         const { username } = createdUsers.ops[randomUserIndex];
 
-        const randomFishTaleIndex = Math.floor(Math.random() * createdFishTales.length);
-        const { _id: FishTaleId } = createdFishTales[randomFishTaleIndex];
+        const randomFishTopicIndex = Math.floor(Math.random() * createdFishTopics.length);
+        const { _id: FishTopicId } = createdFishTopics[randomFishTopicIndex];
 
-        await FishTale.updateOne(
-            { _id: FishTaleId },
-            { $push: { fishTaleReactions: { fishTaleReactionBody, username } } },
+        await FishTopic.updateOne(
+            { _id: FishTopicId },
+            { $push: { fishTopicReactions: { fishTopicReactionBody, username } } },
             { runValidators: true }
         );
     }
 
-    // create VampChats
-    let createdVampChats = [];
+    // create VampTopics
+    let createdVampTopics = [];
     for (let i = 0; i < 100; i += 1) {
-        const vampChatText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+        const vampTopicText = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
         const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
         const { username, _id: userId } = createdUsers.ops[randomUserIndex];
 
-        const createdVampChat = await VampChat.create({ vampChatText, username });
+        const createdVampTopic = await VampTopic.create({ vampTopicText, username });
 
         const updatedUser = await User.updateOne(
             { _id: userId },
-            { $push: { vampChats: createdVampChats._id } }
+            { $push: { vampTopics: createdVampTopics._id } }
         );
 
-        createdVampChats.push(createdVampChat);
+        createdVampTopics.push(createdVampTopic);
     }
 
-    // create VampChatReactions
+    // create VampTopicReactions
     for (let i = 0; i < 100; i += 1) {
-        const vampChatReactionBody = faker.lorem.words(Math.round(Math.random() * 20) + 1);
+        const vampTopicReactionBody = faker.lorem.words(Math.round(Math.random() * 20) + 1);
 
         const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
         const { username } = createdUsers.ops[randomUserIndex];
 
-        const randomVampChatIndex = Math.floor(Math.random() * createdVampChats.length);
-        const { _id: vampChatId } = createdVampChats[randomVampChatIndex];
+        const randomVampTopicIndex = Math.floor(Math.random() * createdVampTopics.length);
+        const { _id: vampTopicId } = createdVampTopics[randomVampTopicIndex];
 
-        await VampChat.updateOne(
-            { _id: vampChatId },
-            { $push: { vampChatReactions: { vampChatReactionBody, username } } },
+        await VampTopic.updateOne(
+            { _id: vampTopicId },
+            { $push: { vampTopicReactions: { vampTopicReactionBody, username } } },
             { runValidators: true }
         );
     }

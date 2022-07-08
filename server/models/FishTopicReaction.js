@@ -1,9 +1,9 @@
 const { Schema } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
-const vampChatReactionSchema = new Schema(
+const fishTopicReactionSchema = new Schema(
     {
-        vampChatReactionBody: {
+        fishTopicReactionBody: {
             type: String,
             required: true,
             maxlength: 280
@@ -25,4 +25,4 @@ const vampChatReactionSchema = new Schema(
     }
 );
 
-module.exports = vampChatReactionSchema;
+module.exports = fishTopicReactionSchema;
