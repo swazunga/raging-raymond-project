@@ -49,10 +49,10 @@ db.once('open', async () => {
         const { username } = createdUsers.ops[randomUserIndex];
 
         const randomFishTopicIndex = Math.floor(Math.random() * createdFishTopics.length);
-        const { _id: FishTopicId } = createdFishTopics[randomFishTopicIndex];
+        const { _id: fishTopicId } = createdFishTopics[randomFishTopicIndex];
 
         await FishTopic.updateOne(
-            { _id: FishTopicId },
+            { _id: fishTopicId },
             { $push: { fishTopicReactions: { fishTopicReactionBody, username } } },
             { runValidators: true }
         );
