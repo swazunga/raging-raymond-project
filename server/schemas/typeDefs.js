@@ -41,12 +41,28 @@ type User {
 }
 
 type Query {
+    me: User
     users: [User]
     user(username: String!): User
     fishTopics(username: String): [FishTopic]
     fishTopic(_id: ID!): [FishTopic]
     vampTopics(username: String): [VampTopic]
     vampTopic(_id: ID!): [VampTopic]
-}`;
+}
+
+type Auth {
+    token: ID!
+    user: User
+}
+
+    type Mutation {
+        login(email: String!, password: String!): Auth
+        addUser(username: String!, email: String!, password: String!): Auth
+    addFishTopic(fishTopicText: String!): FishTopic
+    addVampTopic(vampTopicText: String!): VampTopic
+    addFishTopicReaction(fishTopicId: ID!, fishTopicReactionBody: String!): FishTopic
+    addVampTopicReaction(vampTopicId: ID!, vampTopicReactionBody: String!): VampTopic
+    }
+`;
 
 module.exports = typeDefs;
