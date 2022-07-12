@@ -1201,7 +1201,6 @@ nav a:hover {
   }
 }
 
-<<<<<<< HEAD
 .nav-tabs {
   display: flex;
   justify-content: space-between;
@@ -1224,7 +1223,6 @@ nav a:hover {
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
-=======
 /* col-xl */
 @media screen and (min-width: 1200px) {
   .col-xl-1 {
@@ -1301,7 +1299,6 @@ nav a:hover {
 
   .align-end-xl {
     align-items: flex-end;
->>>>>>> d3b61b8094211864f98fe4c3e0906a94e2175b7c
   }
 
   .align-center-xl {
