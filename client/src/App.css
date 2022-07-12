@@ -28,6 +28,25 @@
   color: #61dafb;
 }
 
+.nav-tabs {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item {
+  list-style-type: none;
+  color: blue;
+  padding: 0 2vw;
+}
+
+.nav-link {
+  color: pink;
+}
+
+.nav-link:active {
+  font-weight: bold;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
