@@ -747,6 +747,12 @@ nav a:hover {
   padding-top: auto;
   padding-bottom: auto;
 }
+.img-thumbnail {
+  width: 50%;
+  height: auto;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
 
 /* FONT UTILS */
 .text-uppercase {
@@ -1265,5 +1271,8 @@ nav a:hover {
   .align-center-xl {
     align-items: center;
   }
+
 }
+
+
 
