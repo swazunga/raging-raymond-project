@@ -32,7 +32,7 @@ function Navigation({ currentPage, handlePageChange }) {
               currentPage === "VampTopic" ? "nav-link active" : "nav-link"
             }
           >
-            Vamp Topics
+            VAMP2 Topics
           </a>
         </li>
         <li className="nav-item">
