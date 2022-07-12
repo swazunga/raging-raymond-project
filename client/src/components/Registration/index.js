@@ -31,6 +31,10 @@ function Registration() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    console.log(formState);
+    e.target.reset();
+    // alert("Registration submitted!");
+    setErrorMessage("Registration Submitted!");
   }
   return (
     <section>
@@ -38,30 +42,15 @@ function Registration() {
       <form id="contact-form" onSubmit={handleSubmit}>
         <div>
           <label htmlFor="name">Name:</label>
-          <input
-            type="text"
-            name="name"
-            defaultValue={name}
-            onBlur={handleChange}
-          />
+          <input type="text" name="name" onBlur={handleChange} />
         </div>
         <div>
           <label htmlFor="email">Email address:</label>
-          <input
-            type="email"
-            name="email"
-            defaultValue={email}
-            onBlur={handleChange}
-          />
+          <input type="email" name="email" onBlur={handleChange} />
         </div>
         <div>
           <label htmlFor="participants">Participants:</label>
-          <textarea
-            name="participants"
-            rows="1"
-            defaultValue=""
-            onBlur={handleChange}
-          />
+          <input name="participants" defaultValue="" onBlur={handleChange} />
         </div>
         {errorMessage && (
           <div>
