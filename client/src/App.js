@@ -12,6 +12,7 @@ import FishTopic from './Pages/FishTopic';
 import VampTopic from './Pages/VampTopic';
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Gallery from './components/Gallery';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -28,6 +29,7 @@ function App() {
       <div className="flex-column justify-flex-start min-100-vh">
         <Header />
         <div className="container">
+
           <FishTopic />
         </div>
         <Footer />
