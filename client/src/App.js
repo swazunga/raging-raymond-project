@@ -8,6 +8,7 @@ import {
 
 import "./App.css";
 import About from "./Pages/About";
+import Donate from "./Pages/Donate";
 import FishTopic from "./Pages/FishTopic";
 import VampTopic from "./Pages/VampTopic";
 import Registration from "./components/Registration/index";
@@ -28,7 +29,7 @@ function App() {
   const [currentPage, setCurrentPage] = useState("About");
 
   const renderPage = () => {
-    if (currentPage === "AboutMe") {
+    if (currentPage === "About") {
       return <About />;
     }
     if (currentPage === "FishTopic") {
@@ -43,16 +44,17 @@ function App() {
     if (currentPage === "Gallery") {
       return <Gallery />;
     }
+    if (currentPage === "Donate") {
+      return <Donate />;
+    }
   };
 
-  const handlePageChange = (page) => setCurrentPage(page);
+const handlePageChange = (page) => setCurrentPage(page);
   return (
     <ApolloProvider client={client}>
-      <div className="flex-column justify-flex-start min-100-vh">
         <Header currentPage={currentPage} handlePageChange={handlePageChange} />
         <div className="container">{renderPage()}</div>
         <Footer />
-      </div>
     </ApolloProvider>
   );
 }

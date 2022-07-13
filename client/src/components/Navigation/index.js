@@ -2,8 +2,8 @@ import React from "react";
 
 function Navigation({ currentPage, handlePageChange }) {
   return (
-    <div>
-      <ul className="nav-tabs">
+    
+      <ul className="nav nav-tabs">
         <li className="nav-item">
           <a
             href="#About"
@@ -59,17 +59,17 @@ function Navigation({ currentPage, handlePageChange }) {
         </li>
         <li className="nav-item">
           <a
-            href="#Donations"
-            onClick={() => handlePageChange("Dontations")}
+            href="#Donate"
+            onClick={() => handlePageChange("Donate")}
             className={
-              currentPage === "Donations" ? "nav-link active" : "nav-link"
+              currentPage === "Donate" ? "nav-link active" : "nav-link"
             }
           >
             Donate!
           </a>
         </li>
       </ul>
-    </div>
+    
   );
 }
 
