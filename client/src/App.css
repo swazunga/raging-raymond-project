@@ -24,7 +24,7 @@ img {
 }
 
 .img-thumbnail {
-  width: 45%;
+  width: 100%;
   height: auto;
   margin-bottom: 50px;
   cursor: pointer;
@@ -51,3 +51,4 @@ form{
   border-radius: 8px;
   padding: 20px;
 }
+
