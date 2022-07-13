@@ -43,7 +43,7 @@ function Navigation({ currentPage, handlePageChange }) {
               currentPage === "Registration" ? "nav-link active" : "nav-link"
             }
           >
-            Register for Fishing Tournament
+            Tournament Registration
           </a>
         </li>
         <li className="nav-item">

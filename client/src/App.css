@@ -13,7 +13,6 @@ nav{
   /* padding: 0 2vw; */
 }
 .nav-link {
-  color: pink;
 }
 .nav-link:active {
   font-weight: bold;
@@ -29,4 +28,17 @@ img {
   height: auto;
   margin-bottom: 50px;
   cursor: pointer;
+}
+/* Matthew CSS work */
+
+footer{
+  background-color: rgb(246, 246, 246);
+  padding: 1vh;
+  margin-top: 3vh;
+}
+
+#donate-form{
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 20px;
 }
