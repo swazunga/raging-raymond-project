@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer>
-                &copy;{new Date().getFullYear()} by Chandler, Kendrick, Warren, and Wiser
+            &copy;{new Date().getFullYear()} by Chandler, Kendrick, Warren, and Wiser
         </footer>
     );
 };

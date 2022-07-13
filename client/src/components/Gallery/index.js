@@ -45,7 +45,7 @@ const Gallery = () => {
 
 
     return (
-        <div className="flex-row">
+        <div className="row justify-content-evenly">
 
             {galleryContents.map((galleryContents) => (
                 <GalleryCard
