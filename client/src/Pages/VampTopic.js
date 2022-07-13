@@ -9,6 +9,7 @@ const VampTopic = () => {
     console.log(vampTopics)
 
     return (
+        <div className='container min-height'>
         <main>
             <div className='flex-row justify-space-between'>
                 <div className='col-12 mb-3'>
@@ -20,6 +21,7 @@ const VampTopic = () => {
                 </div>
             </div>
         </main>
+        </div>
     )
 }
 

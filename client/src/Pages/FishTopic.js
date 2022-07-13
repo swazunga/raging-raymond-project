@@ -9,17 +9,19 @@ const FishTopic = () => {
     console.log(fishTopics)
 
     return (
-        <main>
-            <div className='flex-row justify-space-between'>
-                <div className='col-12 mb-3'>
-                    {loading ? (
-                        <div>Loading...</div>
-                    ) : (
-                        <FishTopicList fishTopics={fishTopics} title="Some Fish Tales..." />
-                    )}
+        <div className='container min-height'>
+            <main>
+                <div className='flex-row justify-space-between'>
+                    <div className='col-12 mb-3'>
+                        {loading ? (
+                            <div>Loading...</div>
+                        ) : (
+                            <FishTopicList fishTopics={fishTopics} title="Some Fish Tales..." />
+                        )}
+                    </div>
                 </div>
-            </div>
-        </main>
+            </main>
+        </div>
     )
 }
 

@@ -45,6 +45,7 @@ const Gallery = () => {
 
 
     return (
+    <div className='container min-height'>
         <div className="row justify-content-evenly">
 
             {galleryContents.map((galleryContents) => (
@@ -58,7 +59,7 @@ const Gallery = () => {
             ))}
 
         </div>
-
+    </div>
     )
 
 }

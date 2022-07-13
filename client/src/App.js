@@ -52,8 +52,9 @@ function App() {
 const handlePageChange = (page) => setCurrentPage(page);
   return (
     <ApolloProvider client={client}>
+      
         <Header currentPage={currentPage} handlePageChange={handlePageChange} />
-        <div className="container">{renderPage()}</div>
+        {renderPage()}
         <Footer />
     </ApolloProvider>
   );

@@ -1,7 +1,6 @@
 /* Michael Nav Work */
 nav{
   padding: 0 !important;
-  margin-bottom: 3vh;
 }
 .nav-tabs {
   display: flex;
@@ -40,10 +39,6 @@ footer{
   background-color: rgb(246, 246, 246);
   padding: 1vh;
   margin-top: 3vh;
-  /* position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0; */
 }
 
 form{
@@ -52,3 +47,53 @@ form{
   padding: 20px;
 }
 
+.navbar{
+  border: 1px solid #dee2e6;
+}
+
+.nav-tabs{
+  border: none;
+}
+
+.min-height{
+  min-height: calc(93vh - 83px);
+  margin-top: 50px;
+}
+
+/* .container-flex{
+  min-height: calc(96vh - 83px);
+} */
+
+#about-container {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#about-container h1{
+  margin-bottom: 10px;
+}
+
+#hero-section {
+  background: url(../public/images/ocean.jpg) 50% no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+#hero-section #hero-section-text  {
+  color: white;
+  font-size: 65px !important;
+  text-shadow: 1px 1px 2px black;
+}
+
+#header-text{
+  font-size: 55px;
+  text-decoration: none;
+  color: white;
+}
