@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import {
   ApolloProvider,
@@ -35,13 +35,12 @@ const client = new ApolloClient({
 });
 
 function App() {
-
   return (
     <ApolloProvider client={client}>
       <Router>
-        <div>
+        <div className="flex-column justify-flex-start min-100-vh">
           <Header />
-          <div className='container'>
+          <div className="container">
             <Routes>
               <Route
                 path="/"
@@ -52,29 +51,43 @@ function App() {
                 element={<Login />}
               />
               <Route
+                path="/signup"
+                element={<Signup />}
+
+              />
+              <Route
+                path="gallery"
+                element={<Gallery />}
+              />
+              <Route
                 path="/profile"
                 element={<Profile />}
               />
-              <Route path="/fishTopic"
+              <Route
+                path="/fishTopics"
                 element={<FishTopic />}
               />
-              <Route path="/vampTopic"
-                element={<VampTopic />}
-              />
-              <Route path="/fishTopic/:id"
+              <Route
+                path="/fishTopic/:id"
                 element={<FishTopic />}
               />
-              <Route path="/vampTopic/:id"
+              <Route
+                path="/vampTopic/:id"
                 element={<VampTopic />}
+              />
+              <Route
+                path="*"
+                element={<NoMatch />}
               />
             </Routes>
           </div>
           <Footer />
         </div>
       </Router>
-
     </ApolloProvider>
   );
 }
+
+
 
 export default App;

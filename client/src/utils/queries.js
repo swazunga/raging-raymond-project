@@ -68,3 +68,25 @@ query vampTopic($id: ID!) {
     }
 }
 `;
+
+export const QUERY_USER = gql`
+query user ($username: String!) {
+    user(username: $username) {
+        _id
+        username
+        email
+        fishTopics {
+            _id
+            fishTopicText
+            createdAt
+            fishTopicReactionCount
+        }
+        vampTopics {
+            _id
+            vampTopicText
+            createdAt
+            vampTopicReactionCount
+        }
+    }
+}
+`;
