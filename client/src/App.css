@@ -72,6 +72,8 @@ form{
 
 #about-container h1{
   margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(44, 46, 44, .8);
 }
 
 #hero-section {

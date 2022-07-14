@@ -6,7 +6,7 @@ const Donate = () => {
                 <div className="col-lg-3 col-sm-12">
                     <h2>We appreciate any donations!</h2>
                     <p>Any donations will go to support research toward the treatment, prevention, and curing of VAMP2 disorder as well as the annual fishing tournament</p>
-                    <p>We use the Stripe payment system and all transactions are fully encrypted and anonymized. We appreciate your support for a worthy cause, and all donations are tax deductible.</p>
+                    <p>We use the Stripe payment system and all transactions are fully encrypted and anonymized. Additionally, all donations are tax deductible. We appreciate your support for a worthy cause!</p>
                 </div>
 
                 <div className="col-lg-6 col-sm-12">
