@@ -16,18 +16,17 @@ const FishTopicList = ({ fishTopics, title }) => {
                             <Link
                                 to={`/profile/${fishTopic.username}`}
                                 style={{ fontWeight: 700 }}
-                                className="text-light"
                             >
                                 {fishTopic.username}
                             </Link> {' '}
                             thought on {fishTopic.createdAt}
                         </p>
                         <div className="card-body">
-                            <Link to={`fishTopic/${fishTopic._id}`}>
+                            <Link to={`/fishTopic/${fishTopic._id}`}>
                                 <p>{fishTopic.fishTopicText}</p>
-                                <p className="mb-0">
+                                <p>
                                     Fish Tale Reactions: {fishTopic.fishTopicReactionsCount} || Click to{' '}
-                                    {fishTopic.fishTopicReactionCount ? 'see' : 'start'} the discussion
+                                    {fishTopic.fishTopicReactionCount ? 'see' : 'start'} the discussion!
                                 </p>
                             </Link>
                         </div>

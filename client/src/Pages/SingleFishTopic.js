@@ -1,28 +1,39 @@
+
+import React from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_FISHTOPICS } from '../utils/queries';
-import FishTopicList from '../components/FishTopicList';
+import { QUERY_FISHTOPIC } from '../utils/queries';
+import { useParams } from 'react-router-dom';
+import FishTopicReactionList from '../components/FishTopicReactionList';
 
-const SingleFishTopic = () => {
-    //use useQuery hook to make query request
-    const { loading, data } = useQuery(QUERY_FISHTOPICS);
-    const fishTopics = data?.fishTopics || [];
-    console.log(fishTopics)
+const SingleFishTopic = (props) => {
+    const { id: fishTopicId } = useParams();
 
+    const { loading, data } = useQuery(QUERY_FISHTOPIC, {
+        variables: { id: fishTopicId },
+    });
+    const fishTopic = data?.fishTopic || {};
+
+    if (loading) {
+        return <div>Loading...</div>
+    }
+    console.log(fishTopicId)
+    console.log(fishTopic.username)
     return (
-        <div className='container min-height'>
-            <main>
-                <div className='flex-row justify-space-between'>
-                    <div className='col-12 mb-3'>
-                        {loading ? (
-                            <div>Loading...</div>
-                        ) : (
-                            <FishTopicList fishTopics={fishTopics} title="Some Fish Tales..." />
-                        )}
-                    </div>
+        <div>
+            <div>
+                <p>
+                    <span>
+                        {fishTopic.username}
+                    </span>{' '}
+                    thought on {fishTopic.createdAt}
+                </p>
+                <div>
+                    <p>{fishTopic.fishTopicText}</p>
                 </div>
-            </main>
+            </div>
+            {fishTopic.fishTopicReactionCount > 0 && <FishTopicReactionList fishTopicReactions={fishTopic.fishTopicReactions} />}
         </div>
-    )
-}
+    );
+};
 
 export default SingleFishTopic;

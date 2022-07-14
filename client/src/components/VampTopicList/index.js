@@ -16,7 +16,7 @@ const VampTopicList = ({ vampTopics, title }) => {
                             <Link
                                 to={`/profile/${vampTopic.username}`}
                                 style={{ fontWeight: 700 }}
-                                className="text-light"
+
                             >
                                 {vampTopic.username}
                             </Link>{' '}

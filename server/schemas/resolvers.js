@@ -19,7 +19,7 @@ const resolvers = {
         },
         fishTopics: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return FishTopic.find().sort({ createdAt: -1 });
+            return FishTopic.find(params).sort({ createdAt: -1 });
         },
         fishTopic: async (parent, { _id }) => {
             return FishTopic.findOne({ _id });
@@ -27,9 +27,9 @@ const resolvers = {
 
         vampTopics: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return VampTopic.find().sort({ createdAt: -1 });
+            return VampTopic.find(params).sort({ createdAt: -1 });
         },
-        vampTopic: async (parent, { username }) => {
+        vampTopic: async (parent, { _id }) => {
             return VampTopic.findOne({ _id });
         },
 

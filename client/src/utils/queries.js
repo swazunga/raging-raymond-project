@@ -34,3 +34,59 @@ query vampTopics($username: String) {
     }
 }
 `;
+export const QUERY_FISHTOPIC = gql`
+query fishTopic($id: ID!) {
+    fishTopic(_id: $id) {
+        _id
+        fishTopicText
+        createdAt
+        username
+        fishTopicReactionCount
+        fishTopicReactions {
+            _id
+            createdAt
+            username
+            fishTopicReactionBody
+        }
+    }
+}
+`;
+export const QUERY_VAMPTOPIC = gql`
+query vampTopic($id: ID!) {
+    vampTopic(_id: $id) {
+        _id
+        vampTopicText
+        createdAt
+        username
+        vampTopicReactionCount
+        vampTopicReactions {
+            _id
+            createdAt
+            username
+            vampTopicReactionBody
+        }
+    }
+}
+`;
+
+export const QUERY_USER = gql`
+query user ($username: String!) {
+    user(username: $username) {
+        _id
+        username
+        email
+        fishTopics {
+            _id
+            fishTopicText
+            createdAt
+            fishTopicReactionCount
+        }
+        vampTopics {
+            _id
+            vampTopicText
+            createdAt
+            vampTopicReactionCount
+        }
+    }
+}
+`;

@@ -1,26 +1,33 @@
+import React from 'react';
 import { useQuery } from '@apollo/client';
-import { QUERY_VAMPTOPICS } from '../utils/queries';
-import VampTopicList from '../components/VampTopicList';
+import { QUERY_VAMPTOPIC } from '../utils/queries';
+import { useParams } from 'react-router-dom';
 
-const SingleVampTopic = () => {
+const SingleVampTopic = props => {
     //use useQuery hook to make query request
-    const { loading, data } = useQuery(QUERY_VAMPTOPICS);
-    const vampTopics = data?.vampTopics || [];
-    console.log(vampTopics)
+    const { id: vampTopicId } = useParams();
+    const { loading, data } = useQuery(QUERY_VAMPTOPIC, {
+        variables: { id: vampTopicId }
+    });
+    const vampTopic = data?.vampTopic || {};
+    if (loading) {
+        return <div>Loading...</div>
+    }
 
     return (
-        <div className='container min-height'>
-            <main>
-                <div className='flex-row justify-space-between'>
-                    <div className='col-12 mb-3'>
-                        {loading ? (
-                            <div>Loading...</div>
-                        ) : (
-                            <VampTopicList vampTopics={vampTopics} title="Some Vamp Chats..." />
-                        )}
-                    </div>
+        <div>
+
+            <div>
+                <p>
+                    <span style={{ fontWeight: 700 }}>
+                        {vampTopic.username}
+                    </span>{' '}
+                    thought on {vampTopic.createdAt}
+                </p>
+                <div className="card-body">
+                    <p>{vampTopic.vampTopicText}</p>
                 </div>
-            </main>
+            </div>
         </div>
     )
 }
