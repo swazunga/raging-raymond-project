@@ -11,6 +11,10 @@ const Header = () => {
                 <nav className="text-center">
                     <Link to='/login'>Login</Link>
                     <Link to='/signup'>Signup</Link>
+                    <Link to='/gallery'>Gallery</Link>
+                    <Link to='/donate'>Donate</Link>
+                    <Link to='/fishTopics'>Fish Tales</Link>
+                    <Link to='/vampTopics'>Vamp Chat</Link>
                 </nav>
             </div>
         </header>
