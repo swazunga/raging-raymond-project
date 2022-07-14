@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
   ApolloProvider,
   ApolloClient,
@@ -7,14 +8,19 @@ import {
 } from "@apollo/client";
 
 import "./App.css";
+import FishTopics from './Pages/FishTopics';
+import VampTopics from "./Pages/VampTopics";
 import About from "./Pages/About";
 import Donate from "./Pages/Donate";
-import FishTopic from "./Pages/FishTopic";
-import VampTopic from "./Pages/VampTopic";
+import SingleFishTopic from "./Pages/SingleFishTopic";
+import SingleVampTopic from "./Pages/SingleVampTopic";
 import Registration from "./components/Registration/index";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Gallery from "./components/Gallery";
+import Profile from "./Pages/Profile"
+import Signup from "./Pages/Signup";
+import Login from "./Pages/Login";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -26,36 +32,69 @@ const client = new ApolloClient({
 });
 
 function App() {
-  const [currentPage, setCurrentPage] = useState("About");
 
-  const renderPage = () => {
-    if (currentPage === "About") {
-      return <About />;
-    }
-    if (currentPage === "FishTopic") {
-      return <FishTopic />;
-    }
-    if (currentPage === "VampTopic") {
-      return <VampTopic />;
-    }
-    if (currentPage === "Registration") {
-      return <Registration />;
-    }
-    if (currentPage === "Gallery") {
-      return <Gallery />;
-    }
-    if (currentPage === "Donate") {
-      return <Donate />;
-    }
-  };
-
-const handlePageChange = (page) => setCurrentPage(page);
   return (
     <ApolloProvider client={client}>
-      
-        <Header currentPage={currentPage} handlePageChange={handlePageChange} />
-        {renderPage()}
-        <Footer />
+      <Router>
+        <div>
+          <Header />
+          <div>
+            <Routes>
+              <Route
+                path="/"
+                element={<About />}
+              />
+              <Route
+                path="/About"
+                element={<About />}
+              />
+              <Route
+                path="/login"
+                element={<Login />}
+              />
+              <Route
+                path="/signup"
+                element={<Signup />}
+              />
+              <Route
+                path="/profile">
+                <Route path=":username" element={<Profile />} />
+                <Route path="" element={<Profile />} />
+              </Route>
+              <Route
+                path="/fishTopics"
+                element={<FishTopics />}
+              />
+              <Route
+                path="/vampTopics"
+                element={<VampTopics />}
+              />
+              <Route
+                path="/fishTopic/:id"
+                element={<SingleFishTopic />}
+              />
+              <Route
+                path="/vampTopic/:id"
+                element={<SingleVampTopic />}
+              />
+              <Route
+                path="/gallery"
+                element={<Gallery />}
+              />
+              <Route
+                path="/donate"
+                element={<Donate />}
+              />
+              <Route
+                path="/registration"
+                element={<Registration />}
+              />
+            </Routes>
+          </div>
+          <Footer />
+        </div>
+      </Router>
+
     </ApolloProvider>
   );
 }

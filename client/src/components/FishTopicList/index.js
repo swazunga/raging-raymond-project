@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const FishTopicList = ({ fishTopics, title }) => {
     if (!fishTopics.length) {
@@ -12,15 +13,23 @@ const FishTopicList = ({ fishTopics, title }) => {
                 fishTopics.map(fishTopic => (
                     <div key={fishTopic._id} className="card mb-3">
                         <p className="card-header">
-                            {fishTopic.username}
+                            <Link
+                                to={`/profile/${fishTopic.username}`}
+                                style={{ fontWeight: 700 }}
+                                className="text-light"
+                            >
+                                {fishTopic.username}
+                            </Link> {' '}
                             thought on {fishTopic.createdAt}
                         </p>
                         <div className="card-body">
-                            <p>{fishTopic.fishTopicText}</p>
-                            <p className="mb-0">
-                                Fish Tale Reactions: {fishTopic.fishTopicReactionsCount} || Click to{' '}
-                                {fishTopic.fishTopicReactionCount ? 'see' : 'start'} the discussion
-                            </p>
+                            <Link to={`fishTopic/${fishTopic._id}`}>
+                                <p>{fishTopic.fishTopicText}</p>
+                                <p className="mb-0">
+                                    Fish Tale Reactions: {fishTopic.fishTopicReactionsCount} || Click to{' '}
+                                    {fishTopic.fishTopicReactionCount ? 'see' : 'start'} the discussion
+                                </p>
+                            </Link>
                         </div>
                     </div>
                 ))}

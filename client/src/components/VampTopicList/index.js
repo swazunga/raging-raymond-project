@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const VampTopicList = ({ vampTopics, title }) => {
     if (!vampTopics.length) {
@@ -12,15 +13,23 @@ const VampTopicList = ({ vampTopics, title }) => {
                 vampTopics.map(vampTopic => (
                     <div key={vampTopic._id} className="card mb-3">
                         <p className="card-header">
-                            {vampTopic.username}
+                            <Link
+                                to={`/profile/${vampTopic.username}`}
+                                style={{ fontWeight: 700 }}
+                                className="text-light"
+                            >
+                                {vampTopic.username}
+                            </Link>{' '}
                             thought on {vampTopic.createdAt}
                         </p>
                         <div className="card-body">
-                            <p>{vampTopic.vampTopicText}</p>
-                            <p className="mb-0">
-                                Vamp Chat Reactions: {vampTopic.vampTopicReactionsCount} || Click to{' '}
-                                {vampTopic.vampTopicReactionCount ? 'see' : 'start'} the discussion
-                            </p>
+                            <Link to={`/vampTopic/${vampTopic._id}`}>
+                                <p>{vampTopic.vampTopicText}</p>
+                                <p className="mb-0">
+                                    Vamp Chat Reactions: {vampTopic.vampTopicReactionsCount} || Click to{' '}
+                                    {vampTopic.vampTopicReactionCount ? 'see' : 'start'} the discussion
+                                </p>
+                            </Link>
                         </div>
                     </div>
                 ))}

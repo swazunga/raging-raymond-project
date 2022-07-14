@@ -2,7 +2,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_FISHTOPICS } from '../utils/queries';
 import FishTopicList from '../components/FishTopicList';
 
-const FishTopic = () => {
+const SingleFishTopic = () => {
     //use useQuery hook to make query request
     const { loading, data } = useQuery(QUERY_FISHTOPICS);
     const fishTopics = data?.fishTopics || [];
@@ -25,4 +25,4 @@ const FishTopic = () => {
     )
 }
 
-export default FishTopic;
+export default SingleFishTopic;
