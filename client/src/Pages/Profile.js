@@ -19,7 +19,7 @@ const Profile = () => {
     if (loading) {
         return <div>Loading...</div>;
     }
-
+    console.log(user)
     return (
         <div>
             <div className="flex-row mb-3">

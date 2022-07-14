@@ -22,14 +22,14 @@ const userSchema = new Schema(
             minlength: 6
         },
         //link "fishtopics" chat feature to user
-        fishtopics: [
+        fishTopics: [
             {
                 type: Schema.Types.ObjectId,
                 ref: 'FishTopic'
             }
         ],
         //link "vamptopic" chat feature to user
-        vamptopics: [
+        vampTopics: [
             {
                 type: Schema.Types.ObjectId,
                 ref: 'VampTopic'

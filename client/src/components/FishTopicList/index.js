@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const FishTopicList = ({ fishTopics, title }) => {
-    if (!fishTopics.length) {
-        return <h3>No Fish Tales Yet...</h3>
-    }
+    // if (!fishTopics.length) {
+    //     return <h3>No Fish Tales Yet...</h3>
+    // }
 
     return (
         <div>

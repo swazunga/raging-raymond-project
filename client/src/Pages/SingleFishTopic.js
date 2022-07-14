@@ -16,8 +16,9 @@ const SingleFishTopic = (props) => {
     if (loading) {
         return <div>Loading...</div>
     }
+    console.log(fishTopic)
     console.log(fishTopicId)
-    console.log(fishTopic.username)
+
     return (
         <div>
             <div>
