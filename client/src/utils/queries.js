@@ -90,3 +90,46 @@ query user ($username: String!) {
     }
 }
 `;
+export const QUERY_ME = gql`
+{
+    me {
+        _id
+        username
+        email
+        fishTopics {
+            _id
+            fishTopicText
+            createdAt
+            fishTopicReactionCount
+            fishTopicReactions {
+                _id
+                createdAt
+                fishTopicReactionBody
+                username
+            }
+        }
+        vampTopics {
+            _id
+            vampTopicText
+            createdAt
+            vampTopicRecationCount
+            vampTopicReactions {
+                _id
+                createdAt
+                vampTopicReactionBody
+                username
+            }
+        }
+    }
+}
+`;
+
+export const QUERY_ME_BASIC = gql`
+{
+    me {
+        _id
+        username
+        email
+    }
+}
+`;

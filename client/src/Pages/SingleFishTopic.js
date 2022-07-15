@@ -4,6 +4,8 @@ import { useQuery } from '@apollo/client';
 import { QUERY_FISHTOPIC } from '../utils/queries';
 import { useParams } from 'react-router-dom';
 import FishTopicReactionList from '../components/FishTopicReactionList';
+import FishTopicReactionForm from '../components/FishTopicReactionForm';
+import Auth from '../utils/auth'
 
 const SingleFishTopic = (props) => {
     const { id: fishTopicId } = useParams();
@@ -33,6 +35,7 @@ const SingleFishTopic = (props) => {
                 </div>
             </div>
             {fishTopic.fishTopicReactionCount > 0 && <FishTopicReactionList fishTopicReactions={fishTopic.fishTopicReactions} />}
+            {Auth.loggedIn() && <FishTopicReactionForm fishTopicId={fishTopic._id} />}
         </div>
     );
 };
