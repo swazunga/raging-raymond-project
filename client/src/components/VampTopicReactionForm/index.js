@@ -3,13 +3,13 @@ import { ADD_VAMPTOPICREACTION } from '../../utils/mutations';
 import { useMutation } from '@apollo/client';
 
 const VampTopicReactionForm = ({ vampTopicId }) => {
-    const [reactionBody, setBody] = useState('');
+    const [vampTopicReactionBody, setVampTopicReactionBody] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
     const [addVampTopicReaction, { error }] = useMutation(ADD_VAMPTOPICREACTION);
 
     const handleChange = event => {
         if (event.target.value.length <= 280) {
-            setBody(event.target.value);
+            setVampTopicReactionBody(event.target.value);
             setCharacterCount(event.target.value.length);
         }
     };
@@ -18,9 +18,9 @@ const VampTopicReactionForm = ({ vampTopicId }) => {
         event.preventDefault();
         try {
             await addVampTopicReaction({
-                variables: { reactionBody, vampTopicId }
+                variables: { vampTopicReactionBody, vampTopicId }
             })
-            setBody('');
+            setVampTopicReactionBody('');
             setCharacterCount(0);
         } catch (e) {
             console.error(e);
@@ -38,7 +38,7 @@ const VampTopicReactionForm = ({ vampTopicId }) => {
             >
                 <textarea
                     placeholder="Leave a reaction to this thought..."
-                    value={reactionBody}
+                    value={vampTopicReactionBody}
                     className="form-input col-12 col-md-9"
                     onChange={handleChange}
                 ></textarea>
