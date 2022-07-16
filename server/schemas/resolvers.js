@@ -154,7 +154,9 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
     addRegistrant: async (parent, args, context) => {
+      console.log("args", args);
       const registrant = await Registrant.create({ registrants: args });
+      console.log("registrant:", registrant);
       return registrant;
     },
   },

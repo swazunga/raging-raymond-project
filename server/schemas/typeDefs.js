@@ -42,11 +42,6 @@ const typeDefs = gql`
 
   type Registrant {
     _id: ID
-
-    registrants: [People]
-  }
-
-  type People {
     name: String
     message: String
     participants: Int
