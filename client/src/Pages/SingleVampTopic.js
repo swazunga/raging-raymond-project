@@ -2,8 +2,8 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 import { QUERY_VAMPTOPIC } from '../utils/queries';
 import { useParams } from 'react-router-dom';
-import VampTopicReactionList from '../components/FishTopicReactionList';
-import VampTopicReactionForm from '../components/FishTopicReactionForm';
+import VampTopicReactionList from '../components/VampTopicReactionList';
+import VampTopicReactionForm from '../components/VampTopicReactionForm';
 import Auth from '../utils/auth'
 
 const SingleVampTopic = props => {
@@ -11,8 +11,10 @@ const SingleVampTopic = props => {
     //use useQuery hook to make query request
     const { id: vampTopicId } = useParams();
     const { loading, data } = useQuery(QUERY_VAMPTOPIC, {
+
         variables: { id: vampTopicId }
     });
+    console.log('data: ', data);
     const vampTopic = data?.vampTopic || {};
     if (loading) {
         return <div>Loading...</div>
@@ -32,7 +34,7 @@ const SingleVampTopic = props => {
                     <p>{vampTopic.vampTopicText}</p>
                 </div>
             </div>
-            {vampTopic.fishTopicReactionCount > 0 && <VampTopicReactionList vampTopicReactions={vampTopic.vampTopicReactions} />}
+            {vampTopic.vampTopicReactionCount > 0 && <VampTopicReactionList vampTopicReactions={vampTopic.vampTopicReactions} />}
             {Auth.loggedIn() && <VampTopicReactionForm vampTopicId={vampTopic._id} />}
         </div>
     )

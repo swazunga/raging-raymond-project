@@ -45,9 +45,9 @@ type Query {
     users: [User]
     user(username: String!): User
     fishTopics(username: String): [FishTopic]
-    fishTopic(_id: ID!): [FishTopic]
+    fishTopic(_id: ID!): FishTopic
     vampTopics(username: String): [VampTopic]
-    vampTopic(_id: ID!): [VampTopic]
+    vampTopic(_id: ID!): VampTopic
 }
 
 type Auth {

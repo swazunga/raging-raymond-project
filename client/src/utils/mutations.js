@@ -54,31 +54,33 @@ mutation addVampTopic($vampTopicText: String!) {
 `;
 
 export const ADD_FISHTOPICREACTION = gql`
-mutation addFishTopicReaction($fishTopicId: ID!, $fishTopicReactionBody: String!) {
-    addFishTopicReaction(fishTopicId: $ fishTopicId, fishTopicReactionBody: $fishTopicfReactionBody) {
+mutation AddFishTopicReaction($fishTopicId: ID!, $fishTopicReactionBody: String!) {
+    addFishTopicReaction(fishTopicId: $fishTopicId, fishTopicReactionBody: $fishTopicReactionBody) {
+      _id
+      fishTopicText
+      fishTopicReactions {
+        fishTopicReactionBody
+        createdAt
+        username
         _id
-        fishTopicReactionCount
-        fishTopicReactions {
-            _id
-            fishTopicReactionBody
-            createdAt
-            username
-        }
+      }
     }
-}
+  }
 `;
 
 export const ADD_VAMPTOPICREACTION = gql`
 mutation addVampTopicReaction($vampTopicId: ID!, $vampTopicReactionBody: String!) {
-    addVampTopicReaction(vampTopicId: $ vampTopicId, vampTopicReactionBody: $vampTopicfReactionBody) {
+    addVampTopicReaction(vampTopicId: $vampTopicId, vampTopicReactionBody: $vampTopicReactionBody) {
+      _id
+      createdAt
+      username
+      vampTopicReactionCount
+      vampTopicReactions {
         _id
-        vampTopicReactionCount
-        vampTopicReactions {
-            _id
-            vampTopicReactionBody
-            createdAt
-            username
-        }
+        vampTopicReactionBody
+        createdAt
+        username
+      }
     }
-}
+  }
 `;

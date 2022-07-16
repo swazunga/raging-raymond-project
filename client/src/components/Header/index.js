@@ -7,6 +7,7 @@ const Header = () => {
         event.preventDefault();
         Auth.logout();
     };
+
     return (
         <header className="navbar bg-light">
             <div className="container-fluid">
@@ -16,7 +17,7 @@ const Header = () => {
                 <nav className="text-center">
                     {Auth.loggedIn() ? (
                         <>
-                            <Link to="/profile">Me</Link>
+                            <Link to={`/profile`}>My Profile</Link>
                             <a href="/" onClick={logout}>
                                 Logout
                             </a>

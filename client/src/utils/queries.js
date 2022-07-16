@@ -52,21 +52,21 @@ query fishTopic($id: ID!) {
 }
 `;
 export const QUERY_VAMPTOPIC = gql`
-query vampTopic($id: ID!) {
+query Query($id: ID!) {
     vampTopic(_id: $id) {
+      _id
+      vampTopicText
+      createdAt
+      username
+      vampTopicReactionCount
+      vampTopicReactions {
         _id
-        vampTopicText
+        vampTopicReactionBody
         createdAt
         username
-        vampTopicReactionCount
-        vampTopicReactions {
-            _id
-            createdAt
-            username
-            vampTopicReactionBody
-        }
+      }
     }
-}
+  }
 `;
 
 export const QUERY_USER = gql`
@@ -112,7 +112,7 @@ export const QUERY_ME = gql`
             _id
             vampTopicText
             createdAt
-            vampTopicRecationCount
+            vampTopicReactionCount
             vampTopicReactions {
                 _id
                 createdAt

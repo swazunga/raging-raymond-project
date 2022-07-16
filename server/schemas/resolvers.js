@@ -5,15 +5,17 @@ const { signToken } = require('../utils/auth')
 const resolvers = {
     Query: {
         me: async (parent, args, context) => {
+            console.log('context: ', context.user);
             if (context.user) {
 
-                const userData = await User.findOne({ _id: context.user_id })
+                const userData = await User.findOne({ _id: context.user._id })
                     .select('-__v -password')
                     .populate('fishTopics')
                     .populate('vampTopics');
 
                 return userData
             }
+
 
             throw new AuthenticationError('Not Logged In');
         },
@@ -22,15 +24,21 @@ const resolvers = {
             return FishTopic.find(params).sort({ createdAt: -1 });
         },
         fishTopic: async (parent, { _id }) => {
-            return FishTopic.findOne({ _id });
+
+            const fishTopic = await FishTopic.findOne({ _id });
+
+
+            return fishTopic
         },
 
         vampTopics: async (parent, { username }) => {
             const params = username ? { username } : {};
-            return VampTopic.find(params).sort({ createdAt: -1 });
+            const vampTopics = await VampTopic.find(params).sort({ createdAt: -1 });
+            return vampTopics
         },
         vampTopic: async (parent, { _id }) => {
-            return VampTopic.findOne({ _id });
+            const vampTopic = await VampTopic.findOne({ _id });
+            return vampTopic
         },
 
         //get all users
@@ -106,19 +114,25 @@ const resolvers = {
                     { _id: fishTopicId },
                     { $push: { fishTopicReactions: { fishTopicReactionBody, username: context.user.username } } },
                     { new: true, runValidators: true }
+
                 );
+                console.log('updated fishtopic', updatedFishTopic)
 
                 return updatedFishTopic;
             }
             throw new AuthenticationError('You need to be logged in!')
         },
         addVampTopicReaction: async (parent, { vampTopicId, vampTopicReactionBody }, context) => {
+            console.log('vampTopicReactionBody: ', vampTopicReactionBody);
+            console.log('vampTopicId: ', vampTopicId);
             if (context.user) {
                 const updatedVampTopic = await VampTopic.findOneAndUpdate(
+
                     { _id: vampTopicId },
                     { $push: { vampTopicReactions: { vampTopicReactionBody, username: context.user.username } } },
                     { new: true, runValidators: true }
                 );
+                console.log('updatedVampTopic: ', updatedVampTopic);
 
                 return updatedVampTopic;
             }
