@@ -6,7 +6,7 @@ const registrantSchema = new Schema({
     required: true,
     trim: true,
   },
-  message: {
+  email: {
     type: String,
     required: true,
 

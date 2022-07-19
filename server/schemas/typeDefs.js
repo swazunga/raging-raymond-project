@@ -43,7 +43,7 @@ const typeDefs = gql`
   type Registrant {
     _id: ID
     name: String
-    message: String
+    email: String
     participants: Int
   }
 
@@ -78,7 +78,7 @@ const typeDefs = gql`
     ): VampTopic
     addRegistrant(
       name: String!
-      message: String!
+      email: String!
       participants: Int!
     ): Registrant
   }
