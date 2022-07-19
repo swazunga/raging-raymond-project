@@ -38,6 +38,13 @@ type User {
     email: String
     fishTopics: [FishTopic]
     vampTopics: [VampTopic]
+} 
+
+type Registrant {
+  _id: ID
+  name: String
+  email: String
+  participants: Int
 }
 
 type Query {
@@ -48,6 +55,7 @@ type Query {
     fishTopic(_id: ID!): FishTopic
     vampTopics(username: String): [VampTopic]
     vampTopic(_id: ID!): VampTopic
+    registrants: [Registrant]
 }
 
 type Auth {
@@ -62,6 +70,7 @@ type Auth {
     addVampTopic(vampTopicText: String!): VampTopic
     addFishTopicReaction(fishTopicId: ID!, fishTopicReactionBody: String!): FishTopic
     addVampTopicReaction(vampTopicId: ID!, vampTopicReactionBody: String!): VampTopic
+    addRegistrant(name: String!, email: String!, participants: Int!): Registrant
     }
 `;
 
