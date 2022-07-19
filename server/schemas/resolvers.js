@@ -1,6 +1,7 @@
-const { User, FishTopic, VampTopic, Registrant } = require('../models');
+const { User, FishTopic, VampTopic, Registrant, Donation } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth')
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
   Query: {
@@ -58,7 +59,40 @@ const resolvers = {
     registrants: async () => {
       return Registrant.find();
     },
+    
+    donations: async () => {
+      return Donation.find();
+    },
+    
+    checkout: async (parent, args, context) => {
+      
+      const donation = await Donation.create({amount:args.amount, name:args.name});
 
+      // generate product id
+      const stripeProduct = await stripe.products.create({
+        name: `$${args.amount} Donation`,
+        description: "Donation to Raging Raymond Charity Fishing Tournament"
+      });
+      
+
+      // generate price id using the product id
+      const stripePrice = await stripe.prices.create({
+        product: stripeProduct.id,
+        unit_amount: args.amount * 100,
+        currency: 'usd',
+      });
+
+      const stripeSession = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items: [{price: stripePrice.id, quantity: 1}],
+        mode: 'payment',
+        success_url: 'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
+        cancel_url: 'https://example.com/cancel'
+      });
+      
+      return { session: stripeSession.id, donation: donation }
+
+    },
 
   },
 

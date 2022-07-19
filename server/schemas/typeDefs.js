@@ -47,6 +47,18 @@ type Registrant {
   participants: Int
 }
 
+type Donation {
+    _id: ID
+    donationDate: String
+    amount: Int
+    name: String
+}
+
+type Checkout {
+    session: ID
+    donation: Donation
+}
+
 type Query {
     me: User
     users: [User]
@@ -56,6 +68,8 @@ type Query {
     vampTopics(username: String): [VampTopic]
     vampTopic(_id: ID!): VampTopic
     registrants: [Registrant]
+    donations: [Donation]
+    checkout(amount: Int!, name: String): Checkout
 }
 
 type Auth {
@@ -64,8 +78,8 @@ type Auth {
 }
 
     type Mutation {
-        login(email: String!, password: String!): Auth
-        addUser(username: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
     addFishTopic(fishTopicText: String!): FishTopic
     addVampTopic(vampTopicText: String!): VampTopic
     addFishTopicReaction(fishTopicId: ID!, fishTopicReactionBody: String!): FishTopic
