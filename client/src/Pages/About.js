@@ -1,13 +1,17 @@
+import Hero from '../components/Hero';
+ 
  const About = () => {
   return (
-  <div id="about-container">
-    <section id="hero-section">
-      <div id="hero-section-text">
-        <h2 id="header-text">Raging Raymond's Fluke Fight!</h2>
-        <h5 className="subhead">The Fishing Tournament for a Cause!</h5>
-      </div>
-    </section>
+  
+  //   <section id="hero-section">
+  //     <div id="hero-section-text">
+  //       <h2 id="header-text">Raging Raymond's Fluke Fight!</h2>
+  //       <h5 className="subhead">The Fishing Tournament for a Cause!</h5>
+  //     </div>
+  //   </section>
 
+<div id="about-container">
+    <Hero/> 
     <div className="container">
       <div className="row justify-content-evenly">
         <div className="col-lg-5 col-sm-12">
