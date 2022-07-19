@@ -14,12 +14,11 @@ function Registration() {
 
   const [addRegistrant, { error }] = useMutation(ADD_REGISTRANT, {
     update(cache, { data: { addRegistrant } }) {
-      const { registrants } = cache.readQuery({ query: QUERY_REGISTRANTS });
-
-      cache.writeQuery({
-        query: QUERY_REGISTRANTS,
-        data: { registrants: [addRegistrant, ...registrants] },
-      });
+      //   const { registrants } = cache.readQuery({ query: QUERY_REGISTRANTS });
+      //   cache.writeQuery({
+      //     query: QUERY_REGISTRANTS,
+      //     data: { registrants: [addRegistrant, ...registrants] },
+      //   });
     },
   });
 
@@ -55,9 +54,6 @@ function Registration() {
     } catch (error) {
       console.error(error);
     }
-    console.log(formState);
-
-    // alert("Registration submitted!");
   }
   return (
     <div className="container min-height">
