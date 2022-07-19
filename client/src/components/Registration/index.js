@@ -1,6 +1,8 @@
-import { removeArgumentsFromDocument } from "@apollo/client/utilities";
 import React, { useState } from "react";
 import { validateEmail } from "../../utils/helpers";
+import { useMutation } from "@apollo/client";
+import { ADD_REGISTRANT } from "../../utils/mutations";
+import { QUERY_REGISTRANTS } from "../../utils/queries";
 
 function Registration() {
   const [errorMessage, setErrorMessage] = useState("");
@@ -9,6 +11,18 @@ function Registration() {
     email: "",
     participants: "",
   });
+
+  const [addRegistrant, { error }] = useMutation(ADD_REGISTRANT, {
+    update(cache, { data: { addRegistrant } }) {
+      const { registrants } = cache.readQuery({ query: QUERY_REGISTRANTS });
+
+      cache.writeQuery({
+        query: QUERY_REGISTRANTS,
+        data: { registrants: [addRegistrant, ...registrants] },
+      });
+    },
+  });
+
   const { name, email, participants } = formState;
   function handleChange(e) {
     if (e.target.name === "email") {
@@ -32,11 +46,18 @@ function Registration() {
 
   function handleSubmit(e) {
     e.preventDefault();
+    try {
+      addRegistrant({
+        variables: { name, email, participants: parseInt(participants, 10) },
+      });
+      e.target.reset();
+      setErrorMessage("Registration Submitted!");
+    } catch (error) {
+      console.error(error);
+    }
     console.log(formState);
 
-    e.target.reset();
     // alert("Registration submitted!");
-    setErrorMessage("Registration Submitted!");
   }
   return (
     <div className="container min-height">
