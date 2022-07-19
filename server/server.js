@@ -42,7 +42,7 @@ const startApolloServer = async (typeDefs, resolvers) => {
 
   //integrate Apollo server with Express app and middleware
   server.applyMiddleware({ app });
-
+  // testing
   //Serve up staic assets
 
   db.once("open", () => {
