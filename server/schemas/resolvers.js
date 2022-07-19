@@ -155,7 +155,11 @@ const resolvers = {
     },
     addRegistrant: async (parent, args, context) => {
       console.log("args", args);
-      const registrant = await Registrant.create(args);
+      const registrant = await Registrant.create({
+        name: "Name",
+        email: "email@email.com",
+        participants: 2,
+      });
       console.log("registrant:", registrant);
       return registrant;
     },

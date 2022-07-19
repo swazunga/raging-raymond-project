@@ -47,9 +47,9 @@ function Registration() {
           </h2>
           <p>
             Register using this form to participate in our annual Fluke
-            Tournament. Taking place in Little Egg Harbor, NJ each year, this
-            event is an exciting opportunity to test your mettle as an angler
-            and to support a great cause.
+            Tournament. Taking place in a set territory off the coast of New
+            Jersey each year, this event is an exciting opportunity to test your
+            mettle as an angler and to support a great cause.
           </p>
           <p>
             Once you have registered we will be in touch with more information
@@ -58,10 +58,9 @@ function Registration() {
           </p>
           <div id="address-container mt-3">
             <h4>Tournament Location</h4>
-            <h5>Address</h5>
-            <h5>City</h5>
-            <h5>State</h5>
-            <h5>Zip</h5>
+            <h5>Captain Mike's Marina</h5>
+            <h5>630 Great Bay Blvd</h5>
+            <h5>Tuckerton, NJ 08087</h5>
           </div>
         </div>
 
