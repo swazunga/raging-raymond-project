@@ -22,7 +22,7 @@ const VampTopicList = ({ vampTopics, title }) => {
                                 <Link to={`/profile/${vampTopic.username}`}>
                                     {vampTopic.username}
                                 </Link>{' '}
-                                <p> posted on {vampTopic.createdAt} </p>
+                                 posted on {vampTopic.createdAt}
                             </h6>
                             <div className="card-body">
                                 <p>{vampTopic.vampTopicText}</p>

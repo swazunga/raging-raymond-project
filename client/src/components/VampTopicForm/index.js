@@ -43,7 +43,7 @@ const VampTopicForm = () => {
             <h3 className='vamp-topic-post-header'>Add a new post!</h3>
             <form className="vamp-topic-post" onSubmit={handleFormSubmit}>
                 <label htmlFor='vamp-topic-post-content' className='form-label'>Post Content</label>
-                <textarea placeholder="Here's a new VAMP Chat..." value={vampTopicText} className="form-control" onChange={handleChange} name="vamp-topic-post-content" rows="10"></textarea>
+                <textarea placeholder="Here's a new VAMP Chat..." value={vampTopicText} className="form-control" onChange={handleChange} name="vamp-topic-post-content" rows="8"></textarea>
                 
                 <span className={` ${characterCount === 280 ? 'text-error' : ''} character-count`}>
                 Character Count: {characterCount}/280

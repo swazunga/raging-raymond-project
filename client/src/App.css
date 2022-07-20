@@ -45,8 +45,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .min-height{
-  min-height: calc(93vh - 83px);
-  margin-top: 50px;
+  min-height: calc(80vh - 83px);
 }
 
 /* navbar css */
@@ -139,6 +138,38 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid rgba(51, 51, 51, .3);
 }
 
+/* Fish Topic Reaction List and Vamp Topic Reaction List Shared CSS */
+.reaction-container {
+
+}
+
+.reaction-form {
+  margin-top: 8px;
+}
+
+.reaction-header {
+  text-align: center;
+  margin: 15px auto 45px auto;
+  padding-bottom: 25px;
+  width: 60%;
+  text-align: center;
+  border-bottom: 1px solid rgba(51, 51, 51, .3);
+}
+
+.reaction {
+  width: 80%;
+  margin: 0px auto 8px auto;
+  padding: 20px 12px 12px 12px;
+  border-bottom: 1px solid rgba(51, 51, 51, .3);
+}
+
+.reaction-info {
+  font-size: 1.3rem;
+}
+
+.reaction-content {
+  font-size: 1.1rem;
+}
 /* About Page CSS */
 .about-header {
   text-align: center;

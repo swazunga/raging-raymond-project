@@ -22,7 +22,7 @@ const FishTopicList = ({ fishTopics, title }) => {
                                 <Link to={`/profile/${fishTopic.username}`}>
                                     {fishTopic.username}
                                 </Link> {' '}
-                                <p> posted on {fishTopic.createdAt} </p>
+                                 posted on {fishTopic.createdAt}
                             </h6>
                             <div className="card-body">
                                 <p>{fishTopic.fishTopicText}</p>

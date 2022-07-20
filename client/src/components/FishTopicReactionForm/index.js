@@ -30,25 +30,18 @@ const FishTopicReactionForm = ({ fishTopicId }) => {
         };
     }
     return (
-        <div>
-            <p className={`m-0 ${characterCount === 280 ? 'text-error' : ''}`}>
-                Character Count: {characterCount}/280
-                {error && <span className="ml-2">Something went wrong...</span>}
-            </p>
-            <form
-                className="flex-row justify-center justify-space-between-md align-stretch"
-                onSubmit={handleFormSubmit}
-            >
-                <textarea
-                    placeholder="Leave a reaction to this thought..."
-                    value={fishTopicReactionBody}
-                    className="form-input col-12 col-md-9"
-                    onChange={handleChange}
-                ></textarea>
+        <div className='col-12 col-lg-5 order-lg-1 order-sm-2'>
 
-                <button className="btn col-12 col-md-3" type="submit">
-                    Submit
-                </button>
+            <form className="reaction-form" onSubmit={handleFormSubmit}>
+                <label htmlFor='fish-topic-comment-content' className='form-label'>Comment Content</label>
+                <textarea placeholder="Leave a comment on this post..." value={fishTopicReactionBody} className="form-control" onChange={handleChange} rows="8" name='fish-topic-comment-content'></textarea>
+
+                <span className={` ${characterCount === 280 ? 'text-error' : ''} character-count`}>
+                Character Count: {characterCount}/280
+                {error && <span classNAme="">Something went wrong...</span>}
+                </span>
+
+                <button className="btn btn-primary" type="submit">Submit</button>
             </form>
         </div>
     );

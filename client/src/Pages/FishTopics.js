@@ -32,7 +32,7 @@ const FishTopics = () => {
                     ) : (
                         <FishTopicList
                             fishTopics={fishTopics}
-                            title="Some Feed for Fish Tales..."
+                            title="Fishing Posts"
                         />
                     )}
                 </div>

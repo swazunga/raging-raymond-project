@@ -3,21 +3,18 @@ import { Link } from 'react-router-dom';
 
 const FishTopicReactionList = ({ fishTopicReactions }) => {
     return (
-        <div>
-            <div>
-                <span>Fish Tale Reactions</span>
-            </div>
-            <div>
-                {fishTopicReactions &&
-                    fishTopicReactions.map(fishTopicReaction => (
-                        <p key={fishTopicReaction._id}>
-                            {fishTopicReaction.fishTopicReactionBody} {'// '}
-                            <Link to={`/profile/${fishTopicReaction.username}`} style={{ fontWeight: 700 }}>
-                                {fishTopicReaction.username} on {fishTopicReaction.createdAt}
-                            </Link>
-                        </p>
-                    ))}
-            </div>
+        <div className='reaction-container'>
+            {fishTopicReactions && fishTopicReactions.map(fishTopicReaction => (
+                <div key={fishTopicReaction._id} className='reaction'>
+                    <h6 className='reaction-info'>                   
+                        <Link to={`/profile/${fishTopicReaction.username}`}>
+                        {fishTopicReaction.username}
+                        </Link>
+                        <span>   commented on {fishTopicReaction.createdAt}</span>
+                    </h6>
+                    <p className='reaction-content'>{fishTopicReaction.fishTopicReactionBody}</p>
+                </div>
+            ))}
         </div>
 
 

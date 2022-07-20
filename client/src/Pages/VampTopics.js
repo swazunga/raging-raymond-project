@@ -30,7 +30,7 @@ const VampTopics = () => {
                     ) : (
                         <VampTopicList
                             vampTopics={vampTopics}
-                            title="Some Feed for Vamp Chats..."
+                            title="Vamp Posts"
                         />
                     )}
                 </div>
