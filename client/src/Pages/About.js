@@ -2,11 +2,6 @@ import Hero from '../components/Hero';
  
  const About = () => {
   return (
-<<<<<<< HEAD
-
-=======
-    
->>>>>>> feature/style
 <div id="about-container">
     <Hero/> 
     <div className="container">
