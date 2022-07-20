@@ -43,17 +43,22 @@ form{
   margin-top: 50px;
 }
 
-.nav-icon {
-  height: 35px;
-  width: 35px;
-  margin-right: 6px;
-}
-
 .nav-name, .nav-link {
   font-weight: 700;
   color: var(--navy-blue);
 }
 
+.nav-icon {
+  height: 35px;
+  width: 35px;
+  margin-right: 6px;
+}
+.nav-name {
+  transition: all .5s ease;
+}
+.nav-name:hover{
+  color: var(--blue-grotto);
+}
 .nav-link:hover{
   color: var(--blue-grotto);
 }
