@@ -1,7 +1,7 @@
 import Hero from "../components/Hero";
 const About = () => {
   return (
-      <div className="about-container">
+      <>
       <Hero/>
       <div className="container">
         <div className="row justify-content-evenly">
@@ -42,7 +42,7 @@ const About = () => {
           </div>
         </div>
       </div>
-    </div>
+      </>
   );
 };
 
