@@ -1,4 +1,32 @@
+import { useLazyQuery } from "@apollo/client";
+import { QUERY_CHECKOUT } from "../utils/queries";
+import { loadStripe } from "@stripe/stripe-js";
+import { useEffect } from "react";
+
+const stripePromise =  loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
+
 const Donate = () => {
+    
+    function submitCheckout(e) {
+        e.preventDefault();
+        console.log("attempting checkout");
+        const donationAmount = parseInt(document.querySelector(".donation-amount").value);
+        console.log(donationAmount)
+        getCheckout({
+            variables: {amount: donationAmount} 
+        });
+    }
+    
+    const [getCheckout, { data }] = useLazyQuery(QUERY_CHECKOUT);
+
+    useEffect(() => {
+        if (data) {
+            stripePromise.then((res) => {
+                res.redirectToCheckout({sessionId: data.checkout.session});
+            })
+        }
+    }, [data])
+
     return (
         <div className="container min-height">
             <div className="row justify-content-evenly">
@@ -16,7 +44,7 @@ const Donate = () => {
 
                     
                     <label htmlFor="donation-amount" className="form-label">Select an amount to donate</label>
-                    <select className="form-select mb-3">
+                    <select className="form-select mb-3 donation-amount">
                         <option defaultValue={""}></option>
                         <option value="5">$5.00</option>
                         <option value="10">$10.00</option>
@@ -25,7 +53,7 @@ const Donate = () => {
                         <option value="50">$50.00</option>
                         <option value="100">$100.00</option>
                     </select>
-                    <button type="submit" className="btn btn-primary">Submit</button>
+                    <button type="submit" className="btn btn-primary" onClick={submitCheckout}>Submit</button>
                 </form>
                 </div>
             </div>
