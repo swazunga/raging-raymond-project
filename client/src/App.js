@@ -21,6 +21,7 @@ import Gallery from "./components/Gallery";
 import Profile from "./Pages/Profile"
 import Signup from "./Pages/Signup";
 import Login from "./Pages/Login";
+import Success from "./Pages/Success";
 import { setContext } from '@apollo/client/link/context';
 
 const httpLink = createHttpLink({
@@ -97,6 +98,10 @@ function App() {
               <Route
                 path="/registration"
                 element={<Registration />}
+              />
+              <Route
+                path="/success"
+                element={<Success />}
               />
             </Routes>
           </div>
