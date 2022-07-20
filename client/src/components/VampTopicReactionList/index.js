@@ -18,28 +18,6 @@ const VampTopicReactionList = ({ vampTopicReactions }) => {
                 </div>
             ))}
         </div>
-
-
-
-
-        // <div>
-        //     <div>
-        //         <span>Vamp Chat Reactions</span>
-        //     </div>
-        //     <div>
-        //         {vampTopicReactions &&
-        //             vampTopicReactions.map(vampTopicReaction => (
-        //                 <p key={vampTopicReaction._id}>
-        //                     {vampTopicReaction.vampTopicReactionBody} {'// '}
-        //                     <Link to={`/profile/${vampTopicReaction.username}`} style={{ fontWeight: 700 }}>
-        //                         {vampTopicReaction.username} on {vampTopicReaction.createdAt}
-        //                     </Link>
-        //                 </p>
-        //             ))}
-        //     </div>
-        // </div>
-
-
     )
 }
 
