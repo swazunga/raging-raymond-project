@@ -16,14 +16,16 @@ const FishTopics = () => {
     return (
     <>
         <Hero/>
-        <main>
-            <div className="flex-row justify-space-between">
+        <div className='container'>
+            <div className="row justify-content-evenly">
                 {loggedIn && (
-                    <div className="col-12 mb-3">
+                
+                    <div className="col-sm-12 col-lg-6 mb-3">
                         <FishTopicForm />
                     </div>
+
                 )}
-                <div className={`col-12 mb-3 ${loggedIn && 'col-lg-8'}`}>
+                <div className={`col-sm-12 col-lg-6 mb-3 ${loggedIn}`}>
 
                     {loading ? (
                         <div>Loading...</div>
@@ -35,7 +37,7 @@ const FishTopics = () => {
                     )}
                 </div>
             </div>
-        </main>
+        </div>
     </>
     );
 };

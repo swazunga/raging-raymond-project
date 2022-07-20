@@ -13,6 +13,7 @@ const VampTopicList = ({ vampTopics, title }) => {
                 <h3 className='fish-topic-header'>{title}</h3>
             </div>
         </div>
+        
             {vampTopics && vampTopics.map(vampTopic => (
                 <div key={vampTopic._id} className="flex-row">
                     <div className='col-12'>
@@ -33,7 +34,7 @@ const VampTopicList = ({ vampTopics, title }) => {
                         </div>
                     </div>
                 </div>
-                ))}
+            ))}
         </>
     )
 };
