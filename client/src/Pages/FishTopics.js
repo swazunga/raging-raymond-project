@@ -25,7 +25,7 @@ const FishTopics = () => {
                     </div>
 
                 )}
-                <div className={`col-sm-12 col-lg-6 mb-3 ${loggedIn}`}>
+                <div className={`col-12 mb-3 ${loggedIn ? 'col-lg-6' : 'col-lg-8'}`}>
 
                     {loading ? (
                         <div>Loading...</div>

@@ -43,9 +43,9 @@ const FishTopicForm = () => {
     return (
         <>
             <h3 className='fish-topic-post-header'>Add a new post!</h3>
-            <form className="" onSubmit={handleFormSubmit}>
-                <label htmlFor='fish-topic-form' className='form-label'>Post Content</label>
-                <textarea placeholder="Here's a new Fish Tale..." value={fishTopicText} className="form-control" onChange={handleChange} name="fish-topic-form"></textarea>
+            <form className="fish-topic-post" onSubmit={handleFormSubmit}>
+                <label htmlFor='fish-topic-post-content' className='form-label'>Post Content</label>
+                <textarea placeholder="Here's a new Fish Tale..." value={fishTopicText} className="form-control" onChange={handleChange} name="fish-topic-post-content" rows="10"></textarea>
                 
                 <span className={` ${characterCount === 280 ? 'text-error' : ''} character-count`}>
                 Character Count: {characterCount}/280
