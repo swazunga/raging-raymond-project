@@ -7,16 +7,14 @@
   },
   "private": true,
   "dependencies": {
-    
+    "stripe": "^9.14.0"
   },
   "scripts": {
     "start": "node server/server.js",
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed"
-
   },
-  
   "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
   "main": "server/server.js",
   "repository": {
