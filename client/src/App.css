@@ -63,21 +63,11 @@ h1, h2, h3, h4, h5, h6 {
 .nav-name {
   transition: all .2s ease;
 }
-.nav-name:active {
+
+.nav-name:hover, .nav-name:active, .nav-link:hover, .nav-link.active{
   color: var(--blue-grotto);
 }
 
-.nav-name:hover{
-  color: var(--blue-grotto);
-}
-
-.nav-link:hover{
-  color: var(--blue-grotto);
-}
-
-.nav-link.active {
-  color: var(--blue-grotto);
-}
 .nav-link span {
   content: '';
   display: block;
@@ -95,6 +85,25 @@ h1, h2, h3, h4, h5, h6 {
 .nav-link.active span {
   width: 100%;
   background-color: var(--blue-grotto);
+}
+
+/* Login and Signup Page Shared CSS */
+
+.login-header, .signup-header {
+  text-align: center;
+  margin: 15px auto 45px auto;
+  padding-bottom: 25px;
+  width: 60%;
+  text-align: center;
+  border-bottom: 1px solid rgba(51, 51, 51, .3);
+}
+
+.login-form input, .signup-form input {
+  margin-bottom: 20px;
+}
+
+.login-form, .login-header {
+  margin-top: 25px;
 }
 
 /* Fish Topic List and Vamp Topic List Shared Component CSS */
@@ -148,6 +157,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Hero Section CSS */
+#hero-container {
+  margin-bottom: 50px;
+}
+
 .hero-header {
   color:white;
   font-weight:300;
