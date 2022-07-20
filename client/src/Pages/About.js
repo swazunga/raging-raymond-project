@@ -2,14 +2,7 @@ import Hero from '../components/Hero';
  
  const About = () => {
   return (
-  
-  //   <section id="hero-section">
-  //     <div id="hero-section-text">
-  //       <h2 id="header-text">Raging Raymond's Fluke Fight!</h2>
-  //       <h5 className="subhead">The Fishing Tournament for a Cause!</h5>
-  //     </div>
-  //   </section>
-
+    
 <div id="about-container">
     <Hero/> 
     <div className="container">
