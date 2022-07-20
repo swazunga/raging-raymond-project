@@ -7,33 +7,35 @@ const VampTopicList = ({ vampTopics, title }) => {
     // }
 
     return (
-        <div>
-            <h3>{title}</h3>
-            {vampTopics &&
-                vampTopics.map(vampTopic => (
-                    <div key={vampTopic._id} className="card mb-3">
-                        <p className="card-header">
-                            <Link
-                                to={`/profile/${vampTopic.username}`}
-                                style={{ fontWeight: 700 }}
-
-                            >
-                                {vampTopic.username}
-                            </Link>{' '}
-                            thought on {vampTopic.createdAt}
-                        </p>
-                        <div className="card-body">
-                            <Link to={`/vampTopic/${vampTopic._id}`}>
+        <>
+        <div className='flex-row'>
+            <div className='col-12'>
+                <h3 className='fish-topic-header'>{title}</h3>
+            </div>
+        </div>
+        
+            {vampTopics && vampTopics.map(vampTopic => (
+                <div key={vampTopic._id} className="flex-row">
+                    <div className='col-12'>
+                        <div className='card mb-3'>
+                            <h6 className="card-header">
+                                <Link to={`/profile/${vampTopic.username}`}>
+                                    {vampTopic.username}
+                                </Link>{' '}
+                                 posted on {vampTopic.createdAt}
+                            </h6>
+                            <div className="card-body">
                                 <p>{vampTopic.vampTopicText}</p>
-                                <p className="mb-0">
-                                    Vamp Chat Reactions: {vampTopic.vampTopicReactionCount} || Click to{' '}
-                                    {vampTopic.vampTopicReactionCount ? 'see' : 'start'} the discussion
-                                </p>
-                            </Link>
+                                <Link to={`/vampTopic/${vampTopic._id}`}>                                    
+                                    Comments: {vampTopic.vampTopicReactionCount} || Click to{' '}
+                                    {vampTopic.vampTopicReactionCount ? 'see' : 'start'} the discussion                                    
+                                </Link>
+                            </div>
                         </div>
                     </div>
-                ))}
-        </div>
+                </div>
+            ))}
+        </>
     )
 };
 

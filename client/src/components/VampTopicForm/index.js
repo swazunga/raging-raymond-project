@@ -39,25 +39,20 @@ const VampTopicForm = () => {
 
     };
     return (
-        <div>
-            <p className={`m-0 ${characterCount === 280 ? 'text-error' : ''}`}>
+        <>
+            <h3 className='vamp-topic-post-header'>Add a new post!</h3>
+            <form className="vamp-topic-post" onSubmit={handleFormSubmit}>
+                <label htmlFor='vamp-topic-post-content' className='form-label'>Post Content</label>
+                <textarea placeholder="Here's a new VAMP Chat..." value={vampTopicText} className="form-control" onChange={handleChange} name="vamp-topic-post-content" rows="8"></textarea>
+                
+                <span className={` ${characterCount === 280 ? 'text-error' : ''} character-count`}>
                 Character Count: {characterCount}/280
-                {error && <span classNAme="ml-2">Something went wrong...</span>}
-            </p>
-            <form className="flex-row justify-center justify-space-between-md align-stretch"
-                onSubmit={handleFormSubmit}
-            >
-                <textarea
-                    placeholder="Here's a new Vamp Chat..."
-                    value={vampTopicText}
-                    className="form-input col-12 col-md-9"
-                    onChange={handleChange}
-                ></textarea>
-                <button className="btn col-12 col-md-3" type="submit">
-                    Submit
-                </button>
+                {error && <span classNAme="">Something went wrong...</span>}
+                </span>
+
+                <button className="btn btn-primary" type="submit">Submit</button>
             </form>
-        </div>
+        </>
     )
 }
 

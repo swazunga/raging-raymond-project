@@ -35,51 +35,54 @@ const Signup = () => {
     };
 
     return (
-        <>
+    <>
         <Hero/>
-        <main className="flex-row justify-center mb-4">
-            <div className="col-12 col-md-6">
-                <div className="card">
-                    <h4 className="card-header">Sign Up</h4>
-                    <div className="card-body">
-                        <form onSubmit={handleFormSubmit}>
-                            <input
-                                className="form-input"
-                                placeholder="Your username"
-                                name="username"
-                                type="username"
-                                id="username"
-                                value={formState.username}
-                                onChange={handleChange}
-                            />
-                            <input
-                                className="form-input"
-                                placeholder="Your email"
-                                name="email"
-                                type="email"
-                                id="email"
-                                value={formState.email}
-                                onChange={handleChange}
-                            />
-                            <input
-                                className="form-input"
-                                placeholder="******"
-                                name="password"
-                                type="password"
-                                id="password"
-                                value={formState.password}
-                                onChange={handleChange}
-                            />
-                            <button className="btn d-block w-100" type="submit">
-                                Submit
-                            </button>
-                        </form>
-                        {error && <div>Sign Up Failed</div>}
-                    </div>
+        <div className="container mb-4">
+            <div className="row justify-content-evenly">
+                <div className="col-12 col-md-6">
+                    <form onSubmit={handleFormSubmit} className="signup-form">
+                        <h4 className="signup-header">Sign Up</h4>
+                        
+                        <label className='form-label' htmlFor='username'>Enter Your Username</label>
+                        <input
+                            className="form-control"
+                            placeholder="Your username"
+                            name="username"
+                            type="username"
+                            id="username"
+                            value={formState.username}
+                            onChange={handleChange}
+                        />
+
+                        <label className='form-label' htmlFor='email'>Enter Your Email</label>
+                        <input
+                            className="form-control"
+                            placeholder="example@example.com"
+                            name="email"
+                            type="email"
+                            id="email"
+                            value={formState.email}
+                            onChange={handleChange}
+                        />
+                        
+                        <label className='form-label' htmlFor='password'>Enter Your Password</label>
+                        <input
+                            className="form-control"
+                            placeholder="******"
+                            name="password"
+                            type="password"
+                            id="password"
+                            value={formState.password}
+                            onChange={handleChange}
+                        />
+
+                        <button className="btn btn-primary" type="submit">Submit</button>
+                    </form>
+                    {error && <div>Sign Up Failed</div>}
                 </div>
             </div>
-        </main>
-        </>
+        </div>
+    </>
     );
 };
 

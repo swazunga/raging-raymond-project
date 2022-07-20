@@ -40,42 +40,44 @@ const Login = props => {
     };
 
     return (
-        <>
+    <>
         <Hero/>
-        <main className="flex-row justify-center mb-4">
-            <div className="col-12 col-md-6">
-                <div className="card">
-                    <h4 className="card-header">Login</h4>
-                    <div className="card-body">
-                        <form onSubmit={handleFormSubmit}>
-                            <input
-                                className="form-input"
-                                placeholder="Your email"
-                                name="email"
-                                type="email"
-                                id="email"
-                                value={formState.email}
-                                onChange={handleChange}
-                            />
-                            <input
-                                className="form-input"
-                                placeholder="******"
-                                name="password"
-                                type="password"
-                                id="password"
-                                value={formState.password}
-                                onChange={handleChange}
-                            />
-                            <button className="btn d-block w-100" type="submit">
-                                Submit
-                            </button>
-                        </form>
+        <div className="container mb-4">
+            <div className='row justify-content-evenly'>
+                <div className="col-12 col-md-6">
+                    <form onSubmit={handleFormSubmit} className="login-form">
+                        <h4 className='login-header'>Login</h4>
+                        
+                        <label className='form-label' htmlFor='email'>Enter Your Email</label>
+                        <input
+                        className="form-control"
+                        placeholder="example@example.com"
+                        name="email"
+                        type="email"
+                        id="email"
+                        value={formState.email}
+                        onChange={handleChange}
+                        />
+
+
+                        <label className='form-label' htmlFor='password'>Enter Your Password</label>
+                        <input
+                            className="form-control"
+                            placeholder="******"
+                            name="password"
+                            type="password"
+                            id="password"
+                            value={formState.password}
+                            onChange={handleChange}
+                        />
+
+                        <button className="btn btn-primary" type="submit">Submit</button>
                         {error && <div>Login Failed</div>}
-                    </div>
+                    </form>
                 </div>
             </div>
-        </main>
-        </>
+        </div>
+    </>
     );
 };
 
