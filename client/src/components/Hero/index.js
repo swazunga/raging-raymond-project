@@ -6,7 +6,6 @@ import Wave from "../Wave";
 function Hero() {
 
   const location = useLocation();
-  console.log(location.pathname);
 
 if (location.pathname === "/") {
   return (

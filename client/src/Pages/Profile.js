@@ -38,10 +38,12 @@ const Profile = () => {
         <>
         <Hero/>
         <div className='container-flex'>
+            <div className="row">
             <div className="col-12">
                 <h2 className="profile-view">
                     Viewing {userParam ? `${user.username}'s` : 'your'} profile.
                 </h2>
+            </div>
             </div>
         </div>
         
