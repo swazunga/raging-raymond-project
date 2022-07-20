@@ -44,7 +44,7 @@ const Donate = () => {
 
                     
                     <label htmlFor="donation-amount" className="form-label">Select an amount to donate</label>
-                    <select className="form-select mb-3">
+                    <select className="form-select mb-3 donation-amount">
                         <option defaultValue={""}></option>
                         <option value="5">$5.00</option>
                         <option value="10">$10.00</option>
