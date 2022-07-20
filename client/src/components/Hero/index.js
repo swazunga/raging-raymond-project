@@ -29,9 +29,7 @@ return (
 </div>
 )
 
-
-
- }
+}
 
  export default Hero;
 

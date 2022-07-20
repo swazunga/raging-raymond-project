@@ -50,7 +50,7 @@ const Gallery = () => {
 
             {galleryContents.map((galleryContents) => (
                 <GalleryCard
-                    key={galleryContents._id}
+                    key={galleryContents.title}
                     image={galleryContents.image}
                     title={galleryContents.title}
                     desc={galleryContents.desc}

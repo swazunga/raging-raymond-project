@@ -39,24 +39,13 @@ const Donate = () => {
 
                 <div className="col-lg-6 col-sm-12">
                 <form id="donate-form">
-                    <label for="name" className="form-label">First and Last Name</label>
-                    <input type="input" className="form-control mb-3"></input>
-                    
-                    <label for="address" className="form-label">Enter Home Address</label>
-                    <input type="input" className="form-control mb-3"></input>
-                    
-                    <label for="zip" className="form-label">Zip Code</label>
-                    <input type="input" className="form-control mb-3"></input>
+                    <label htmlFor="name" className="form-label">First and Last Name</label>
+                    <input type="input" className="form-control mb-3"></input>                    
 
-                    <label for="cc" className="form-label">Enter Credit Card Number</label>
-                    <input type="input" className="form-control mb-3"></input>
-
-                    <label for="cvv" className="form-label">Enter CVV Code</label>
-                    <input type="input" className="form-control mb-3"></input>
                     
-                    <label for="donation-amount" className="form-label">Select an amount to donate</label>
-                    <select className="form-select mb-3 donation-amount">
-                        <option selected></option>
+                    <label htmlFor="donation-amount" className="form-label">Select an amount to donate</label>
+                    <select className="form-select mb-3">
+                        <option defaultValue={""}></option>
                         <option value="5">$5.00</option>
                         <option value="10">$10.00</option>
                         <option value="20">$20.00</option>
