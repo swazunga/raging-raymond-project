@@ -65,7 +65,8 @@ const resolvers = {
     },
     
     checkout: async (parent, args, context) => {
-      
+      const url = new URL(context.headers.referer).origin;
+      console.log(context.headers);
       const donation = await Donation.create({amount:args.amount, name:args.name});
 
       // generate product id
@@ -86,8 +87,8 @@ const resolvers = {
         payment_method_types: ['card'],
         line_items: [{price: stripePrice.id, quantity: 1}],
         mode: 'payment',
-        success_url: 'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
-        cancel_url: 'https://example.com/cancel'
+        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${url}/`
       });
       
       return { session: stripeSession.id, donation: donation }
