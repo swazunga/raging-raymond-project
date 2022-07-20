@@ -6,7 +6,7 @@ const About = () => {
       <div className="container">
         <div className="row justify-content-evenly">
           <div className="col-lg-5 col-sm-12">
-            <h1>About the Family</h1>
+            <h1 className="about-header">About the Family</h1>
             <p>
               The Gaudlap Family consists of George (dad), Alex (mom), Raymond,
               Ryan and Isabel. The family resides in Pemberton, NJ where George
@@ -16,7 +16,11 @@ const About = () => {
               interest in this after Raymond’s diagnosis. Raymond known as Mr.
               Smiley is the happiest kid you will ever meet with a smile that
               lights up any room. He was diagnosed with Cerebral Palsy at age 2
-              and a VAMP2 Gene Mutation in 2020. Despite his challenges he
+              and a VAMP2 Gene Mutation in 2020. 
+            </p>
+
+            <p>
+              Despite his challenges he
               continues to beat the odds. Ryan, who is 18 months younger than
               Raymond is the typical boy; full of energy. However, he is an
               amazing little brother who continues to help Raymond meet his full
@@ -29,15 +33,24 @@ const About = () => {
               this world.
             </p>
           </div>
-
+          <div className="col-lg-1"></div>
           <div className="col-lg-5 col-sm-12">
-            <h1>About VAMP2</h1>
+            <h1 className="about-header">About VAMP2</h1>
             <p>
               VAMP2 was first found in 2018 with currently, 10 cases worldwide.
               Currently there is no active treatment for this mutation due to
               the variety of mutations that have taken place with the gene.
               Treatment is symptomatic only. However, there is active research
               going on in the Gold lab in Australia.
+            </p>
+
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+              Fringilla phasellus faucibus scelerisque eleifend donec pretium vulputate. Eget egestas purus viverra accumsan. 
+              Tempor id eu nisl nunc mi ipsum faucibus. Sit amet mattis vulputate enim nulla aliquet porttitor lacus. 
+              Vel elit scelerisque mauris pellentesque pulvinar pellentesque. Morbi non arcu risus quis varius. Aliquam eleifend mi in nulla posuere. 
+              Quam id leo in vitae turpis massa sed elementum. Lacus sed viverra tellus in hac. Ante metus dictum at tempor commodo. 
+              In fermentum posuere urna nec tincidunt. Cras fermentum odio eu feugiat pretium nibh. Eget lorem dolor sed viverra.
             </p>
           </div>
         </div>

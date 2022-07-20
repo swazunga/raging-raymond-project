@@ -96,7 +96,13 @@ h1, h2, h3, h4, h5, h6 {
   width: 100%;
   background-color: var(--blue-grotto);
 }
-
+/* About Page CSS */
+.about-header {
+  text-align: center;
+  border-bottom: 1px solid rgba(51, 51, 51, .3);
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
 /* Profile Page CSS */
 .profile-view {
   text-align: center;

@@ -15,7 +15,7 @@ if (location.pathname === "/") {
     
     {/* <!--Content before waves--> */}
     <div className="inner-hero flex">
-    <h1 className="hero-header">Raging Raymond Fish Fight</h1>
+    <h1 className="hero-header">Raging Raymond's Fish Fight</h1>
     
     </div>
     
