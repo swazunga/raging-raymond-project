@@ -8,7 +8,7 @@ return (
 <div className="header">
 
 {/* <!--Content before waves--> */}
-<div class="inner-header flex">
+<div className="inner-header flex">
 <h1>Raging Raymond Fish Fight</h1>
 </div>
 
@@ -22,7 +22,7 @@ return (
 {/* <!--Header ends--> */}
 
 {/* <!--Content starts--> */}
-<div class="content flex">
+<div className="content flex">
   <p>Test content going here </p>
 </div>
 {/* <!--Content ends--> */}
