@@ -1,58 +1,58 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const QUERY_FISHTOPICS = gql`
-query fishTopics($username: String) {
+  query fishTopics($username: String) {
     fishTopics(username: $username) {
+      _id
+      fishTopicText
+      createdAt
+      username
+      fishTopicReactionCount
+      fishTopicReactions {
         _id
-        fishTopicText
         createdAt
         username
-        fishTopicReactionCount
-        fishTopicReactions {
-            _id
-            createdAt
-            username
-            fishTopicReactionBody
-        }
+        fishTopicReactionBody
+      }
     }
-}
+  }
 `;
 export const QUERY_VAMPTOPICS = gql`
-query vampTopics($username: String) {
+  query vampTopics($username: String) {
     vampTopics(username: $username) {
+      _id
+      vampTopicText
+      createdAt
+      username
+      vampTopicReactionCount
+      vampTopicReactions {
         _id
-        vampTopicText
         createdAt
         username
-        vampTopicReactionCount
-        vampTopicReactions {
-            _id
-            createdAt
-            username
-            vampTopicReactionBody
-        }
+        vampTopicReactionBody
+      }
     }
-}
+  }
 `;
 export const QUERY_FISHTOPIC = gql`
-query fishTopic($id: ID!) {
+  query fishTopic($id: ID!) {
     fishTopic(_id: $id) {
+      _id
+      fishTopicText
+      createdAt
+      username
+      fishTopicReactionCount
+      fishTopicReactions {
         _id
-        fishTopicText
         createdAt
         username
-        fishTopicReactionCount
-        fishTopicReactions {
-            _id
-            createdAt
-            username
-            fishTopicReactionBody
-        }
+        fishTopicReactionBody
+      }
     }
-}
+  }
 `;
 export const QUERY_VAMPTOPIC = gql`
-query Query($id: ID!) {
+  query Query($id: ID!) {
     vampTopic(_id: $id) {
       _id
       vampTopicText
@@ -70,66 +70,77 @@ query Query($id: ID!) {
 `;
 
 export const QUERY_USER = gql`
-query user ($username: String!) {
+  query user($username: String!) {
     user(username: $username) {
+      _id
+      username
+      email
+      fishTopics {
         _id
-        username
-        email
-        fishTopics {
-            _id
-            fishTopicText
-            createdAt
-            fishTopicReactionCount
-        }
-        vampTopics {
-            _id
-            vampTopicText
-            createdAt
-            vampTopicReactionCount
-        }
+        fishTopicText
+        createdAt
+        fishTopicReactionCount
+      }
+      vampTopics {
+        _id
+        vampTopicText
+        createdAt
+        vampTopicReactionCount
+      }
     }
-}
+  }
 `;
 export const QUERY_ME = gql`
-{
+  {
     me {
+      _id
+      username
+      email
+      fishTopics {
         _id
-        username
-        email
-        fishTopics {
-            _id
-            fishTopicText
-            createdAt
-            fishTopicReactionCount
-            fishTopicReactions {
-                _id
-                createdAt
-                fishTopicReactionBody
-                username
-            }
+        fishTopicText
+        createdAt
+        fishTopicReactionCount
+        fishTopicReactions {
+          _id
+          createdAt
+          fishTopicReactionBody
+          username
         }
-        vampTopics {
-            _id
-            vampTopicText
-            createdAt
-            vampTopicReactionCount
-            vampTopicReactions {
-                _id
-                createdAt
-                vampTopicReactionBody
-                username
-            }
+      }
+      vampTopics {
+        _id
+        vampTopicText
+        createdAt
+        vampTopicReactionCount
+        vampTopicReactions {
+          _id
+          createdAt
+          vampTopicReactionBody
+          username
         }
+      }
     }
-}
+  }
 `;
 
 export const QUERY_ME_BASIC = gql`
-{
+  {
     me {
-        _id
-        username
-        email
+      _id
+      username
+      email
     }
-}
+  }
+`;
+
+export const QUERY_REGISTRANTS = gql`
+  query Query {
+    registrants {
+      _id
+      name
+      email
+      participants
+    }
+  }
 `;
