@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import Auth from '../../utils/auth';
 
 const Header = () => {
@@ -11,29 +11,31 @@ const Header = () => {
     return (
         <header className="navbar bg-light">
             <div className="container-fluid">
-                <Link to="/">
-                    <h1>Raging Raymond</h1>
-                </Link>
-                <nav className="text-center">
+                <NavLink className="navbar-brand" to="/">
+                    <img src="/images/fish.png" className="d-inline-block align-text-top nav-icon"/>
+                    <span className="nav-name">Raging Raymond</span>
+                </NavLink>
+                <nav className="nav">
                     {Auth.loggedIn() ? (
                         <>
-                            <Link to={`/profile`}>My Profile</Link>
-                            <a href="/" onClick={logout}>
+                            <NavLink to={`/profile`} className="nav-link">My Profile</NavLink>
+                            <NavLink to={`/`} onClick={logout} className="nav-link">Log Out</NavLink>
+                            {/* <a href="/" onClick={logout}>
                                 Logout
-                            </a>
+                            </a> */}
                         </>
                     ) : (
                         <>
-                            <Link to='/login'>Login</Link>
-                            <Link to='/signup'>Signup</Link>
+                            <NavLink to='/login' className="nav-link">Login</NavLink>
+                            <NavLink to='/signup' className="nav-link">Signup</NavLink>
                         </>
                     )}
 
-                    <Link to='/gallery'>Gallery</Link>
-                    <Link to='/donate'>Donate</Link>
-                    <Link to='/fishTopics'>Fish Tales</Link>
-                    <Link to='/vampTopics'>Vamp Chat</Link>
-                    <Link to='/registration'>Registration</Link>
+                    <NavLink to='/gallery' className="nav-link">Gallery</NavLink>
+                    <NavLink to='/donate' className="nav-link">Donate</NavLink>
+                    <NavLink to='/fishTopics' className="nav-link">Fish Tales</NavLink>
+                    <NavLink to='/vampTopics' className="nav-link">Vamp Chat</NavLink>
+                    <NavLink to='/registration' className="nav-link">Registration</NavLink>
                 </nav>
             </div>
         </header>
