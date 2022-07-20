@@ -6,6 +6,7 @@ import { useParams } from 'react-router-dom';
 import FishTopicReactionList from '../components/FishTopicReactionList';
 import FishTopicReactionForm from '../components/FishTopicReactionForm';
 import Auth from '../utils/auth'
+import Hero from '../components/Hero';
 
 const SingleFishTopic = (props) => {
     const { id: fishTopicId } = useParams();
@@ -21,6 +22,8 @@ const SingleFishTopic = (props) => {
 
 
     return (
+        <>
+        <Hero/>
         <div>
             <div>
                 <p>
@@ -36,6 +39,7 @@ const SingleFishTopic = (props) => {
             {fishTopic.fishTopicReactionCount > 0 && <FishTopicReactionList fishTopicReactions={fishTopic.fishTopicReactions} />}
             {Auth.loggedIn() && <FishTopicReactionForm fishTopicId={fishTopic._id} />}
         </div>
+        </>
     );
 };
 

@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_VAMPTOPICS, QUERY_ME_BASIC } from '../utils/queries';
 import Auth from '../utils/auth'
 import VampTopicForm from '../components/VampTopicForm';
+import Hero from '../components/Hero';
 
 const VampTopics = () => {
     const { loading, data } = useQuery(QUERY_VAMPTOPICS);
@@ -13,6 +14,8 @@ const VampTopics = () => {
     const loggedIn = Auth.loggedIn();
 
     return (
+        <>
+        <Hero/>
         <main>
             <div className="flex-row justify-space-between">
                 {loggedIn && (
@@ -33,6 +36,7 @@ const VampTopics = () => {
                 </div>
             </div>
         </main>
+        </>
     );
 };
 

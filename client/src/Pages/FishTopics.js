@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { QUERY_FISHTOPICS, QUERY_ME_BASIC } from '../utils/queries';
 import Auth from '../utils/auth';
 import FishTopicForm from '../components/FishTopicForm';
+import Hero from "../components/Hero";
 
 const FishTopics = () => {
     const { loading, data } = useQuery(QUERY_FISHTOPICS);
@@ -13,6 +14,8 @@ const FishTopics = () => {
     const loggedIn = Auth.loggedIn();
 
     return (
+    <>
+        <Hero/>
         <main>
             <div className="flex-row justify-space-between">
                 {loggedIn && (
@@ -33,6 +36,7 @@ const FishTopics = () => {
                 </div>
             </div>
         </main>
+    </>
     );
 };
 

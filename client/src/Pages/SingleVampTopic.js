@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom';
 import VampTopicReactionList from '../components/VampTopicReactionList';
 import VampTopicReactionForm from '../components/VampTopicReactionForm';
 import Auth from '../utils/auth'
+import Hero from '../components/Hero';
 
 const SingleVampTopic = props => {
 
@@ -21,6 +22,8 @@ const SingleVampTopic = props => {
     }
 
     return (
+        <>
+        <Hero/>
         <div>
 
             <div>
@@ -37,6 +40,7 @@ const SingleVampTopic = props => {
             {vampTopic.vampTopicReactionCount > 0 && <VampTopicReactionList vampTopicReactions={vampTopic.vampTopicReactions} />}
             {Auth.loggedIn() && <VampTopicReactionForm vampTopicId={vampTopic._id} />}
         </div>
+        </>
     )
 }
 

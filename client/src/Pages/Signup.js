@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../utils/mutations'
 import Auth from '../utils/auth'
+import Hero from '../components/Hero';
 
 const Signup = () => {
     const [formState, setFormState] = useState({ username: '', email: '', password: '' });
@@ -34,6 +35,8 @@ const Signup = () => {
     };
 
     return (
+        <>
+        <Hero/>
         <main className="flex-row justify-center mb-4">
             <div className="col-12 col-md-6">
                 <div className="card">
@@ -76,6 +79,7 @@ const Signup = () => {
                 </div>
             </div>
         </main>
+        </>
     );
 };
 

@@ -3,6 +3,7 @@ import { validateEmail } from "../../utils/helpers";
 import { useMutation } from "@apollo/client";
 import { ADD_REGISTRANT } from "../../utils/mutations";
 import { QUERY_REGISTRANTS } from "../../utils/queries";
+import Hero from "../Hero";
 
 function Registration() {
   const [errorMessage, setErrorMessage] = useState("");
@@ -56,6 +57,8 @@ function Registration() {
     }
   }
   return (
+    <>
+    <Hero/>
     <div className="container min-height">
       <div className="row justify-content-evenly">
         <div className="col-lg-4 col-sm-12">
@@ -130,6 +133,7 @@ function Registration() {
         </div>
       </div>
     </div>
+    </>
   );
 }
 

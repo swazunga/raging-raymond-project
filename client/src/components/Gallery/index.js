@@ -1,6 +1,7 @@
 import React from 'react';
 
 import GalleryCard from "../GalleryCard";
+import Hero from '../Hero';
 
 const Gallery = () => {
     const galleryContents = [
@@ -45,6 +46,8 @@ const Gallery = () => {
 
 
     return (
+    <>
+    <Hero/>
     <div className='container min-height'>
         <div className="row justify-content-evenly">
 
@@ -60,6 +63,7 @@ const Gallery = () => {
 
         </div>
     </div>
+    </>
     )
 
 }

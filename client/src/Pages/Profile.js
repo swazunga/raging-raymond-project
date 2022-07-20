@@ -3,10 +3,12 @@ import { Navigate, useParams } from 'react-router-dom';
 
 import FishTopicList from '../components/FishTopicList';
 import VampTopicList from '../components/VampTopicList';
+import  Hero  from "../components/Hero";
 
 import { useQuery } from '@apollo/client';
 import { QUERY_USER, QUERY_ME } from '../utils/queries';
 import Auth from '../utils/auth'
+
 
 const Profile = () => {
     const { username: userParam } = useParams();
@@ -34,6 +36,7 @@ const Profile = () => {
     }
     return (
         <>
+        <Hero/>
         <div className='container-flex'>
             <div className="col-12">
                 <h2 className="profile-view">

@@ -2,6 +2,7 @@ import { useLazyQuery } from "@apollo/client";
 import { QUERY_CHECKOUT } from "../utils/queries";
 import { loadStripe } from "@stripe/stripe-js";
 import { useEffect } from "react";
+import Hero from "../components/Hero";
 
 const stripePromise =  loadStripe('pk_test_TYooMQauvdEDq54NiTphI7jx');
 
@@ -29,6 +30,8 @@ const Donate = () => {
     }, [data])
 
     return (
+        <>
+        <Hero/>
         <div className="container min-height">
             <div className="row justify-content-evenly">
                 
@@ -59,6 +62,7 @@ const Donate = () => {
                 </div>
             </div>
         </div>
+        </>
     );
   };
   
