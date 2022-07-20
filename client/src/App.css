@@ -19,6 +19,7 @@ img {
   cursor: pointer;
 }
 /* Matthew CSS work */
+/* Global CSS and utility classes */
 
 html, body{
   padding: 0;
@@ -38,11 +39,17 @@ form{
   padding: 20px;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: var(--navy-blue);
+  font-weight: 900;
+}
+
 .min-height{
   min-height: calc(93vh - 83px);
   margin-top: 50px;
 }
 
+/* navbar css */
 .nav-name, .nav-link {
   font-weight: 700;
   color: var(--navy-blue);
@@ -54,11 +61,16 @@ form{
   margin-right: 6px;
 }
 .nav-name {
-  transition: all .5s ease;
+  transition: all .2s ease;
 }
+.nav-name:active {
+  color: var(--blue-grotto);
+}
+
 .nav-name:hover{
   color: var(--blue-grotto);
 }
+
 .nav-link:hover{
   color: var(--blue-grotto);
 }
@@ -72,7 +84,7 @@ form{
   height: 3px;
   width: 0%;
   background: transparent;
-  transition: all .5s ease;
+  transition: all .2s ease;
 }
 
 .nav-link:hover span {
@@ -85,14 +97,21 @@ form{
   background-color: var(--blue-grotto);
 }
 
-
-
+/* Profile Page CSS */
+.profile-view {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
 
 /* Hero Section CSS */
 .hero-header {
+  color:white;
   font-weight:300;
   letter-spacing: 2px;
   font-size:48px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid white;
 }
 
 .hero-subhead {

@@ -9,11 +9,12 @@ const Donate = () => {
     
     function submitCheckout(e) {
         e.preventDefault();
-        console.log("attempting checkout");
+        
         const donationAmount = parseInt(document.querySelector(".donation-amount").value);
-        console.log(donationAmount)
+        const donorName = document.querySelector(".donor-name").value;
+
         getCheckout({
-            variables: {amount: donationAmount} 
+            variables: {amount: donationAmount, name: donorName}
         });
     }
     
@@ -40,7 +41,7 @@ const Donate = () => {
                 <div className="col-lg-6 col-sm-12">
                 <form id="donate-form">
                     <label htmlFor="name" className="form-label">First and Last Name</label>
-                    <input type="input" className="form-control mb-3"></input>                    
+                    <input type="input" className="form-control mb-3 donor-name"></input>                    
 
                     
                     <label htmlFor="donation-amount" className="form-label">Select an amount to donate</label>

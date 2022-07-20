@@ -24,7 +24,7 @@ const Profile = () => {
     if (loading) {
         return <div>Loading...</div>;
     }
-    console.log(user)
+    console.log(user);
     if (!user?.username) {
         return (
             <h4>
@@ -33,29 +33,33 @@ const Profile = () => {
         );
     }
     return (
-        <div>
-            <div className="flex-row mb-3">
-                <h2 className="bg-dark text-secondary p-3 display-inline-block">
+        <>
+        <div className='container-flex'>
+            <div className="col-12">
+                <h2 className="profile-view">
                     Viewing {userParam ? `${user.username}'s` : 'your'} profile.
                 </h2>
             </div>
-
-            <div className="flex-row justify-space-between mb-3">
-                <div className="col-12 mb-3 col-lg-8">
+        </div>
+        
+        <div className='container'>
+            <div className="row">
+                <div className="col-12 col-lg-6">
                     <FishTopicList
                         fishTopics={user.fishTopics}
-                        title={`${user.username}'s fish tales...`}
+                        title={`${user.username}'s Fishing Posts`}
                     />
                 </div>
 
-                <div className="col-12 col-lg-3 mb-3">
+                <div className="col-12 col-lg-6">
                     <VampTopicList
                         vampTopics={user.vampTopics}
-                        title={`${user.username}'s vamp chats...`}
+                        title={`${user.username}'s VAMP2 Posts`}
                     />
                 </div>
             </div>
         </div>
+        </>
     );
 };
 
