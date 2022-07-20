@@ -1,3 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+:root{
+  --navy-blue: #05445E;
+  --blue-grotto: #189AB4;
+  --blue-green: #75E6DA;
+  --baby-blue: #D4F1F4;
+}
+
 /* Chris Thumbnail Work */
 img {
   max-width: 100%;
@@ -14,6 +23,7 @@ img {
 html, body{
   padding: 0;
   margin: 0;
+  font-family: 'Lato', sans-serif;
 }
 
 footer{
@@ -39,46 +49,61 @@ form{
   margin-right: 6px;
 }
 
-.nav-name {
-  margin-top: 15px !important;
+.nav-name, .nav-link {
+  font-weight: 700;
+  color: var(--navy-blue);
 }
+
+.nav-link:hover{
+  color: var(--blue-grotto);
+}
+
+.nav-link.active {
+  color: var(--blue-grotto);
+}
+.nav-link span {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 0%;
+  background: transparent;
+  transition: all .5s ease;
+}
+
+.nav-link:hover span {
+  width: 100%;
+  background-color: var(--blue-grotto);
+}
+
+.nav-link.active span {
+  width: 100%;
+  background-color: var(--blue-grotto);
+}
+
+
+
 
 /* Hero Section CSS */
-
-@import url(//fonts.googleapis.com/css?family=Lato:300:400);
-
-body {
-  margin:0;
-}
-
-h1 {
-  font-family: 'Lato', sans-serif;
+.hero-header {
   font-weight:300;
   letter-spacing: 2px;
   font-size:48px;
 }
-p {
-  font-family: 'Lato', sans-serif;
+
+.hero-subhead {
   letter-spacing: 1px;
   font-size:14px;
   color: #333333;
 }
 
-.header {
+.hero {
   position:relative;
   text-align:center;
   background: linear-gradient(60deg, rgba(84,58,183,1) 0%, rgba(0,172,193,1) 100%);
   color:white;
 }
-.logo {
-  width:50px;
-  fill:white;
-  padding-right:15px;
-  display:inline-block;
-  vertical-align: middle;
-}
 
-.inner-header {
+.inner-hero {
   height:65vh;
   width:100%;
   margin: 0;
@@ -101,7 +126,7 @@ p {
   max-height:150px;
 }
 
-.content {
+.hero-content {
   position:relative;
   height:20vh;
   text-align:center;
@@ -146,7 +171,7 @@ p {
   .content {
     height:30vh;
   }
-  h1 {
+  .hero-header {
     font-size:24px;
   }
 }
