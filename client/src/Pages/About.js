@@ -1,28 +1,55 @@
-import Hero from '../components/Hero';
- 
- const About = () => {
+const About = () => {
   return (
-<div id="about-container">
-    <Hero/> 
-    <div className="container">
-      <div className="row justify-content-evenly">
-        <div className="col-lg-5 col-sm-12">
-          <h1>TESTING TESTING TESTING</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget aliquet nibh praesent tristique magna sit amet. Rutrum quisque non tellus orci ac auctor. Aliquam nulla facilisi cras fermentum odio eu feugiat. Orci dapibus ultrices in iaculis. Vulputate eu scelerisque felis imperdiet proin fermentum. Convallis tellus id interdum velit laoreet id donec ultrices tincidunt. In metus vulputate eu scelerisque felis imperdiet proin fermentum. Tempus imperdiet nulla malesuada pellentesque elit eget gravida. Volutpat lacus laoreet non curabitur gravida arcu. Nulla facilisi etiam dignissim diam quis enim. Fringilla phasellus faucibus scelerisque eleifend donec. Orci porta non pulvinar neque laoreet suspendisse interdum. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Tristique sollicitudin nibh sit amet commodo.</p>
-          <p>Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Interdum velit laoreet id donec ultrices tincidunt. Dui id ornare arcu odio ut sem nulla. Aliquam etiam erat velit scelerisque in dictum non. Dolor morbi non arcu risus quis varius quam. Ultrices gravida dictum fusce ut placerat orci. At elementum eu facilisis sed odio morbi quis commodo. Elementum sagittis vitae et leo duis ut. Pretium viverra suspendisse potenti nullam. Consequat semper viverra nam libero justo. Sed augue lacus viverra vitae congue eu consequat ac felis. Arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc. Vestibulum lectus mauris ultrices eros in cursus turpis. Arcu non odio euismod lacinia at quis risus.</p>
+    <div id="about-container">
+      <section id="hero-section">
+        <div id="hero-section-text">
+          <h2 id="header-text">Raging Raymond's Fluke Fight!</h2>
+          <h5 className="subhead">The Fishing Tournament for a Cause!</h5>
         </div>
-        
-        <div className="col-lg-2 col-sm-12">
-        </div>
+      </section>
 
-        <div className="col-lg-5 col-sm-12">
-          <h1>TESTING TESTING TESTING</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget aliquet nibh praesent tristique magna sit amet. Rutrum quisque non tellus orci ac auctor. Aliquam nulla facilisi cras fermentum odio eu feugiat. Orci dapibus ultrices in iaculis. Vulputate eu scelerisque felis imperdiet proin fermentum. Convallis tellus id interdum velit laoreet id donec ultrices tincidunt. In metus vulputate eu scelerisque felis imperdiet proin fermentum. Tempus imperdiet nulla malesuada pellentesque elit eget gravida. Volutpat lacus laoreet non curabitur gravida arcu. Nulla facilisi etiam dignissim diam quis enim. Fringilla phasellus faucibus scelerisque eleifend donec. Orci porta non pulvinar neque laoreet suspendisse interdum. Faucibus vitae aliquet nec ullamcorper sit amet risus nullam. Tristique sollicitudin nibh sit amet commodo.</p>
-          <p>Augue neque gravida in fermentum et sollicitudin ac orci phasellus. Interdum velit laoreet id donec ultrices tincidunt. Dui id ornare arcu odio ut sem nulla. Aliquam etiam erat velit scelerisque in dictum non. Dolor morbi non arcu risus quis varius quam. Ultrices gravida dictum fusce ut placerat orci. At elementum eu facilisis sed odio morbi quis commodo. Elementum sagittis vitae et leo duis ut. Pretium viverra suspendisse potenti nullam. Consequat semper viverra nam libero justo. Sed augue lacus viverra vitae congue eu consequat ac felis. Arcu cursus euismod quis viverra nibh cras pulvinar mattis nunc. Vestibulum lectus mauris ultrices eros in cursus turpis. Arcu non odio euismod lacinia at quis risus.</p>
+      <div className="container">
+        <div className="row justify-content-evenly">
+          <div className="col-lg-5 col-sm-12">
+            <h1>About the Family</h1>
+            <p>
+              The Gaudlap Family consists of George (dad), Alex (mom), Raymond,
+              Ryan and Isabel. The family resides in Pemberton, NJ where George
+              finished out his contract with the United States Marine Corps.
+              Alex is a homemaker and a part-time writer of articles to help
+              raise awareness in the Special Needs community. She gained
+              interest in this after Raymond’s diagnosis. Raymond known as Mr.
+              Smiley is the happiest kid you will ever meet with a smile that
+              lights up any room. He was diagnosed with Cerebral Palsy at age 2
+              and a VAMP2 Gene Mutation in 2020. Despite his challenges he
+              continues to beat the odds. Ryan, who is 18 months younger than
+              Raymond is the typical boy; full of energy. However, he is an
+              amazing little brother who continues to help Raymond meet his full
+              potential. They have learned to do so many things together.
+              Isabel, the baby of the family is a go with the flow and relaxed
+              girl who adores her big brothers. Our family has had many changes
+              over the years but the one thing that remains the same is making a
+              difference. We have used Raymond’s story to show that even in the
+              worst of times, you can be happy and you can make a difference in
+              this world.
+            </p>
+          </div>
+
+          <div className="col-lg-2 col-sm-12"></div>
+
+          <div className="col-lg-5 col-sm-12">
+            <h1>About VAMP2</h1>
+            <p>
+              VAMP2 was first found in 2018 with currently, 10 cases worldwide.
+              Currently there is no active treatment for this mutation due to
+              the variety of mutations that have taken place with the gene.
+              Treatment is symptomatic only. However, there is active research
+              going on in the Gold lab in Australia.
+            </p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
   );
 };
 

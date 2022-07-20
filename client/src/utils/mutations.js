@@ -1,61 +1,67 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const LOGIN_USER = gql`
-mutation login($email: String!, $password: String!) {
-    login(email: $email, password:$password) {
-        token
-        user {
-            _id
-            username
-        }
+  mutation login($email: String!, $password: String!) {
+    login(email: $email, password: $password) {
+      token
+      user {
+        _id
+        username
+      }
     }
-}
+  }
 `;
 export const ADD_USER = gql`
-mutation addUser($username: String!, $email: String!, $password: String!) {
+  mutation addUser($username: String!, $email: String!, $password: String!) {
     addUser(username: $username, email: $email, password: $password) {
-        token
-        user {
-            _id
-            username
-        }
+      token
+      user {
+        _id
+        username
+      }
     }
-}
+  }
 `;
 
 export const ADD_FISHTOPIC = gql`
-mutation addFishTopic($fishTopicText: String!) {
+  mutation addFishTopic($fishTopicText: String!) {
     addFishTopic(fishTopicText: $fishTopicText) {
+      _id
+      fishTopicText
+      createdAt
+      username
+      fishTopicReactionCount
+      fishTopicReactions {
         _id
-        fishTopicText
-        createdAt
-        username
-        fishTopicReactionCount
-        fishTopicReactions{
-            _id
-        }
+      }
     }
-}
+  }
 `;
 
 export const ADD_VAMPTOPIC = gql`
-mutation addVampTopic($vampTopicText: String!) {
+  mutation addVampTopic($vampTopicText: String!) {
     addVampTopic(vampTopicText: $vampTopicText) {
+      _id
+      vampTopicText
+      createdAt
+      username
+      vampTopicReactionCount
+      vampTopicReactions {
         _id
-        vampTopicText
-        createdAt
-        username
-        vampTopicReactionCount
-        vampTopicReactions{
-            _id
-        }
+      }
     }
-}
+  }
 `;
 
 export const ADD_FISHTOPICREACTION = gql`
-mutation AddFishTopicReaction($fishTopicId: ID!, $fishTopicReactionBody: String!) {
-    addFishTopicReaction(fishTopicId: $fishTopicId, fishTopicReactionBody: $fishTopicReactionBody) {
+  mutation AddFishTopicReaction(
+    $fishTopicId: ID!
+    $fishTopicReactionBody: String!
+  ) {
+    addFishTopicReaction(
+      fishTopicId: $fishTopicId
+      fishTopicReactionBody: $fishTopicReactionBody
+    ) {
       _id
       fishTopicText
       fishTopicReactions {
@@ -69,8 +75,14 @@ mutation AddFishTopicReaction($fishTopicId: ID!, $fishTopicReactionBody: String!
 `;
 
 export const ADD_VAMPTOPICREACTION = gql`
-mutation addVampTopicReaction($vampTopicId: ID!, $vampTopicReactionBody: String!) {
-    addVampTopicReaction(vampTopicId: $vampTopicId, vampTopicReactionBody: $vampTopicReactionBody) {
+  mutation addVampTopicReaction(
+    $vampTopicId: ID!
+    $vampTopicReactionBody: String!
+  ) {
+    addVampTopicReaction(
+      vampTopicId: $vampTopicId
+      vampTopicReactionBody: $vampTopicReactionBody
+    ) {
       _id
       createdAt
       username
@@ -86,11 +98,11 @@ mutation addVampTopicReaction($vampTopicId: ID!, $vampTopicReactionBody: String!
 `;
 
 export const ADD_REGISTRANT = gql`
-  mutation Mutation($name: String, $message: String, $participants: Int) {
-    addRegistrant(name: $name, message: $message, participants: $participants) {
+  mutation Mutation($name: String!, $email: String!, $participants: Int!) {
+    addRegistrant(name: $name, email: $email, participants: $participants) {
       _id
       name
-      message
+      email
       participants
     }
   }
