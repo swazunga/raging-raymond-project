@@ -5,25 +5,25 @@ const FishTopicList = ({ fishTopics, title }) => {
     // if (!fishTopics.length) {
     //     return <h3>No Fish Tales Yet...</h3>
     // }
-    console.log(fishTopics);
+
     return (
         <>
-            <div className='row-flex'>
+            <div className='flex-row'>
                 <div className='col-12'>
-                    <h3>{title}</h3>
+                    <h3 className='fish-topic-header'>{title}</h3>
                 </div>
             </div>
             
             {fishTopics && fishTopics.map(fishTopic => (
-                <div key={fishTopic._id} className='row-flex'>
+                <div key={fishTopic._id} className='flex-row'>
                     <div className='col-12'>
                         <div className="card mb-3">
-                            <div className="card-header">
+                            <h6 className="card-header">
                                 <Link to={`/profile/${fishTopic.username}`}>
                                     {fishTopic.username}
                                 </Link> {' '}
                                 <p> posted on {fishTopic.createdAt} </p>
-                            </div>
+                            </h6>
                             <div className="card-body">
                                 <p>{fishTopic.fishTopicText}</p>
                                 <Link to={`/fishTopic/${fishTopic._id}`}>
@@ -34,7 +34,7 @@ const FishTopicList = ({ fishTopics, title }) => {
                         </div>
                     </div>
                 </div>
-                ))}
+            ))}
         </>
     )
 };
