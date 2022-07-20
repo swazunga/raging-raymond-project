@@ -187,6 +187,14 @@ h1, h2, h3, h4, h5, h6 {
   border-bottom: 1px solid rgba(51, 51, 51, .3);
 }
 
+/* Gallery Page CSS */
+.carousel-caption {
+  background-color: rgba(51, 51, 51, .6);
+}
+.carousel-caption h5{
+  color: white;
+}
+
 /* Hero Section CSS */
 #hero-container {
   margin-bottom: 50px;

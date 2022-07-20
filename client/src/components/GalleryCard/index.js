@@ -1,15 +1,37 @@
 import React from "react";
 
-const GalleryCard = ({ image, title, desc }) => {
-    return (<>
-        <div className="col-lg-6 col-sm-12">
-            <div className="img-thumbnail">
-                <img src={process.env.PUBLIC_URL + image} alt={desc} />
-                <h3>{title}</h3>
+const GalleryCard = ({ image, title, desc, index }) => {
+    if (index === 0) {
+        return (
+            <div className="carousel-item active">
+                <img src={process.env.PUBLIC_URL + image} alt={desc} className='d-block w-100'/>
+                <div className="carousel-caption d-none d-md-block">
+                    <h5>{title}</h5>
+                    <p>{desc}</p>
+                </div>
+            </div>
+        )
+    } else {
+        return (
+            <div className="carousel-item">
+            <img src={process.env.PUBLIC_URL + image} alt={desc} className='d-block w-100'/>
+            <div className="carousel-caption d-none d-md-block">
+                <h5>{title}</h5>
                 <p>{desc}</p>
             </div>
         </div>
-    </>)
+        );
+    }
+
+    // <>
+    //     <div className="col-lg-6 col-sm-12">
+    //         <div className="img-thumbnail">
+    //             <img src={process.env.PUBLIC_URL + image} alt={desc} />
+    //             <h3>{title}</h3>
+    //             <p>{desc}</p>
+    //         </div>
+    //     </div>
+    // </>
 }
 
 
