@@ -26,7 +26,7 @@ const VampTopicList = ({ vampTopics, title }) => {
                             <Link to={`/vampTopic/${vampTopic._id}`}>
                                 <p>{vampTopic.vampTopicText}</p>
                                 <p className="mb-0">
-                                    Vamp Chat Reactions: {vampTopic.vampTopicReactionsCount} || Click to{' '}
+                                    Vamp Chat Reactions: {vampTopic.vampTopicReactionCount} || Click to{' '}
                                     {vampTopic.vampTopicReactionCount ? 'see' : 'start'} the discussion
                                 </p>
                             </Link>

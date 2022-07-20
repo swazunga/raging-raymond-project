@@ -59,4 +59,3 @@ if (location.pathname === "/") {
 }
 
  export default Hero;
-
