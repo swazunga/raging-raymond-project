@@ -5,11 +5,12 @@ import Wave from "../Wave";
 function Hero() {
 return (
 <div id="hero-container">
-<div className="header">
+<div className="hero">
 
 {/* <!--Content before waves--> */}
-<div className="inner-header flex">
-<h1>Raging Raymond Fish Fight</h1>
+<div className="inner-hero flex">
+<h1 className="hero-header">Raging Raymond Fish Fight</h1>
+
 </div>
 
 {/* <!--Waves Container--> */}
@@ -22,8 +23,8 @@ return (
 {/* <!--Header ends--> */}
 
 {/* <!--Content starts--> */}
-<div className="content flex">
-  <p>Test content going here </p>
+<div className="hero-content flex">
+  <h5 className="hero-subhead">A Fishing Tournament For A Cause</h5>
 </div>
 {/* <!--Content ends--> */}
 </div>
