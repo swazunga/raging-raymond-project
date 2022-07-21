@@ -49,7 +49,10 @@ const Gallery = () => {
     <>
     <Hero/>
     <div className='container min-height'>
-        <div className="row justify-content-evenly">
+        <div className="row-flex justify-content-evenly">
+            <div className='col-12 col-lg-8'>
+
+            </div>
 
         <div class="carousel slide" data-bs-ride="false" id='gallery-carousel'>
                 <div className='carousel-indicators'>
@@ -82,11 +85,6 @@ const Gallery = () => {
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
-
-
-
-
-
         </div>
     </div>
     </>
