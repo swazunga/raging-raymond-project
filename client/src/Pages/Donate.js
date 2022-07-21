@@ -35,8 +35,8 @@ const Donate = () => {
         <div className="container min-height">
             <div className="row justify-content-evenly">
                 
-                <div className="col-lg-3 col-sm-12">
-                    <h2>We appreciate any donations!</h2>
+                <div className="col-lg-4 col-sm-12">
+                    <h2 className="donate-header">We appreciate any donations!</h2>
                     <p>Any donations will go to support research toward the treatment, research, and cure for VAMP2 disorder as well as the annual fishing tournament</p>
                     <p>We use the Stripe payment system and all transactions are fully encrypted and anonymized. Additionally, all donations are tax deductible. We appreciate your support for a worthy cause!</p>
                 </div>

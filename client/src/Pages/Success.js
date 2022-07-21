@@ -7,9 +7,13 @@ const Success = () => {
     return (
         <>
         <Hero/>
-        <div>
-        <h1>SUCCESSFUL DONATION</h1>
-        <h2>YOU WILL NOW BE REDIRECTED TO THE HOME PAGE</h2>
+        <div className="container min-height">
+            <div className="row justify-content-evenly center-text">
+                <div className="col">
+                    <h1 className="text-center">SUCCESSFUL DONATION</h1>
+                    <h2 className="text-center">YOU WILL NOW BE REDIRECTED TO THE HOME PAGE</h2>
+                </div>
+            </div>
         </div>
         </>
     );

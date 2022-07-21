@@ -62,7 +62,7 @@ function Registration() {
     <div className="container min-height">
       <div className="row justify-content-evenly">
         <div className="col-lg-4 col-sm-12">
-          <h2 data-testid="h1tag" className="mb-3">
+          <h2 data-testid="h1tag" className="register-header">
             Fluke Tournament Registration
           </h2>
           <p>
@@ -76,7 +76,7 @@ function Registration() {
             and updates. We look forward to seeing you soon, and thank you for
             your support!
           </p>
-          <div id="address-container mt-3">
+          <div id="address-container" className="text-center">
             <h4>Tournament Location</h4>
             <h5>Captain Mike's Marina</h5>
             <h5>630 Great Bay Blvd</h5>
