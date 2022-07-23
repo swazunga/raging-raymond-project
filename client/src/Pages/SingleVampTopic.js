@@ -44,7 +44,7 @@ const SingleVampTopic = props => {
             </div>
 
 
-            <div className='row'>
+            <div className='row justify-content-evenly'>
                 <div className='col-12'>
                     <h3 className='reaction-header'>Vamp Post Comments</h3>
                 </div>
@@ -54,7 +54,7 @@ const SingleVampTopic = props => {
                     {vampTopic.vampTopicReactionCount > 0 && <VampTopicReactionList vampTopicReactions={vampTopic.vampTopicReactions} />}
                 </div>
                 
-                <div className='col-lg-1 order-lg-2 d-sm-none d-lg-block'></div>
+                {Auth.loggedIn() && <div className='col-lg-1 order-lg-2 d-sm-none d-lg-block'></div>}
 
                 {Auth.loggedIn() && <VampTopicReactionForm vampTopicId={vampTopic._id} />}    
             </div>
