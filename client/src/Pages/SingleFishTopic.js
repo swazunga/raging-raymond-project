@@ -47,7 +47,7 @@ const SingleFishTopic = (props) => {
             </div>
 
 
-            <div className='row'>
+            <div className='row justify-content-evenly'>
                 <div className='col-12'>
                     <h3 className='reaction-header'>Fish Post Comments</h3>
                 </div>
@@ -57,7 +57,7 @@ const SingleFishTopic = (props) => {
                     {fishTopic.fishTopicReactionCount > 0 && <FishTopicReactionList fishTopicReactions={fishTopic.fishTopicReactions} />}
                 </div>
                 
-                <div className='col-lg-1 order-lg-2 d-sm-none d-lg-block'></div>
+                {Auth.loggedIn() && <div className='col-lg-1 order-lg-2 d-sm-none d-lg-block'></div>}
 
                 {Auth.loggedIn() && <FishTopicReactionForm fishTopicId={fishTopic._id} />}    
             </div>
